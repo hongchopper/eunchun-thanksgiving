@@ -43,12 +43,12 @@
 
   /* ----- 1페이지 ----- */
   /* 첫 화면 한 장: 글자는 위에 모으고, 그림은 아래에 깔아 여백을 둠 */
-  .p1{height:100svh;min-height:620px;max-height:940px;padding:0;gap:0;background:var(--sky-1);overflow:hidden}
+  .p1{min-height:min(100svh,940px);padding:0;gap:0;background:var(--sky-1);overflow:hidden}
   .p1::before{content:"";position:absolute;inset:14px;border:1px solid rgba(192,154,91,.35);pointer-events:none;z-index:2}
-  .p1 .cover-top{position:relative;z-index:1;padding:clamp(52px,9svh,84px) 24px 0}
+  .p1 .cover-top{position:relative;z-index:1;padding:clamp(40px,7svh,84px) 24px 0}
   .p1 .cover-top .en{margin-bottom:14px}
   .p1 .cover-bottom{position:relative;z-index:1;display:grid;gap:14px;padding:26px 24px 0}
-  .hero-art{flex:1;min-height:0;width:100%;overflow:hidden;line-height:0}
+  .hero-art{flex:1 0 auto;min-height:min(96vw,410px);width:100%;overflow:hidden;line-height:0;margin-top:-24px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 32%);mask-image:linear-gradient(to bottom,transparent,#000 32%)}
   .hero-art svg{width:100%;height:100%;display:block}
   .hero-art .stem{fill:none;stroke:var(--stem);stroke-width:1.1;stroke-linecap:round}
   .hero-art .awn{fill:none;stroke:var(--stem);stroke-width:.5;stroke-linecap:round;opacity:.75}
