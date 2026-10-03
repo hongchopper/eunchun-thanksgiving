@@ -51,13 +51,13 @@
   .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
   /* ----- 1페이지 ----- */
-  /* 첫 화면 한 장에 제목 · 그림 · 일시 · 장소가 모두 보이도록 그림 위에 글자를 얹음 */
+  /* 첫 화면 한 장: 글자는 위에 모으고, 그림은 아래에 깔아 여백을 둠 */
   .p1{height:100svh;min-height:620px;max-height:940px;padding:0;gap:0;background:var(--il-bg);overflow:hidden}
-  .p1 .cover-top{position:relative;z-index:1;padding:clamp(44px,8svh,72px) 24px 0;margin-bottom:-28px}
+  .p1 .cover-top{padding:clamp(52px,9svh,84px) 24px 0}
   .p1 .title{font-family:var(--serif);font-weight:700;font-size:31px;line-height:1.38;text-wrap:balance;margin-top:12px}
   .hero-art{flex:1;min-height:0;width:100%;line-height:0}
   .hero-art svg{width:100%;height:100%;display:block}
-  .p1 .cover-bottom{position:relative;z-index:1;background:var(--il-table);padding:0 24px clamp(36px,6svh,56px);margin-top:-1px}
+  .p1 .cover-bottom{padding:22px 24px 0}
   .info{display:grid;gap:6px;font-size:15px}
   .info .when{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--accent)}
   .info .where{font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:.06em}
@@ -125,8 +125,13 @@
       <h1 class="title">추수감사 가족초청예배</h1>
     </div>
 
+    <div class="cover-bottom info">
+      <div class="when">2026년 10월 18일 주일 오전 11시</div>
+      <div class="where">은천교회 5층 본당</div>
+    </div>
+
     <div class="hero-art">
-<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMid slice">
+<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMax slice">
 <rect width="320" height="400" fill="var(--il-bg)"/>
 <circle cx="160" cy="150" r="96" fill="var(--il-halo)" opacity=".45"/>
 <circle cx="160" cy="150" r="62" fill="var(--il-halo)" opacity=".55"/>
@@ -274,11 +279,6 @@
 <path d="M40 244 L41.6 248.4 L46 250 L41.6 251.6 L40 256 L38.4 251.6 L34 250 L38.4 248.4 Z" fill="var(--il-2)" opacity=".8"/>
 <path d="M286 256 L287.6 260.4 L292 262 L287.6 263.6 L286 268 L284.4 263.6 L280 262 L284.4 260.4 Z" fill="var(--il-2)" opacity=".8"/>
 </svg>
-    </div>
-
-    <div class="cover-bottom info">
-      <div class="when">2026년 10월 18일 주일 오전 11시</div>
-      <div class="where">은천교회 5층 본당</div>
     </div>
 
   </section>
