@@ -13,16 +13,17 @@
 <title>추수감사 가족초청예배 (화사한 버전)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  /* 모바일 초대장: 위에서 아래로 이어지는 한 줄 스크롤 */
+  /* 화사한 버전: 가을 아침 햇살 — 밝은 아이보리 바탕, 가는 선, 절제된 포인트 컬러 */
   :root{
     color-scheme:light;
-    --bg:#fffaf3; --paper:#ffffff; --ink:#3a2a2f; --sub:#7d6a6e; --line:#f3dfd0;
-    --accent:#e2573a; --accent-soft:#ffe6dc; --olive:#4f9a5a; --gold:#e9a521;
-    --ph:#fff1e6; --ph-line:#f0b99a; --outer:#ffe9d6;
-    --sun:#ffc94a; --berry:#e8678a; --leaf:#7cc287; --sky:#8fc9e8;
-    --il-bg:#fff4e4; --il-halo:#ffd66b; --il-1:#ff7a45; --il-berry:#e8456a; --il-2:#ffb52e; --il-3:#5fb36b; --il-4:#8a5cc7; --il-basket:#e3a56a; --il-basket-d:#b9773f; --il-table:#ffe0cc; --il-bread:#f0b46e; --il-wheat:#f0b84a;
+    --bg:#fdfaf5; --paper:#ffffff; --ink:#2f2924; --sub:#8a7f74; --line:#ece3d6;
+    --accent:#b8643f; --accent-soft:#f8ece3; --olive:#8a9165; --gold:#c09a5b;
+    --outer:#f4ede2;
+    --sky-1:#fcf4ea; --sky-2:#fbe3cc; --sun:#ffe3b5;
+    --grain:#d9ae66; --stem:#c29a5c; --leaf:#b9bd95;
+    --hill-1:#f6dcbd; --hill-2:#f0d3ae; --hill-3:#f8ecdc;
     --serif:'Gowun Batang','Nanum Myeongjo',serif;
     --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
     --latin:'Cormorant Garamond',Georgia,serif;
@@ -30,96 +31,77 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{background:var(--outer)}
   body{background:var(--outer);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:430px;margin:0 auto;background:var(--bg);box-shadow:0 0 40px rgba(60,40,20,.08)}
+  .wrap{max-width:430px;margin:0 auto;background:var(--bg);box-shadow:0 0 50px rgba(120,90,50,.08)}
   .page{
     display:flex;flex-direction:column;gap:40px;
-    padding:96px 28px;padding-block:96px;text-align:center;position:relative;
+    padding:96px 32px;text-align:center;position:relative;
   }
-  .page + .page{border-top:1px solid var(--line)}
-  .en{font-family:var(--latin);letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:var(--gold)}
-
-  /* ----- 이미지 자리 ----- */
-  .ph{
-    position:relative;width:100%;max-width:100%;
-    background:
-      linear-gradient(to top right,transparent calc(50% - .5px),var(--ph-line) 50%,transparent calc(50% + .5px)),
-      linear-gradient(to top left,transparent calc(50% - .5px),var(--ph-line) 50%,transparent calc(50% + .5px)),
-      var(--ph);
-    border:1.5px dashed var(--ph-line);
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
-  }
-  .ph span{background:var(--paper);color:var(--sub);font-size:12px;line-height:1.5;padding:6px 12px;border-radius:20px;border:1px solid var(--line)}
-  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .en{font-family:var(--latin);letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--gold)}
+  .orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold)}
+  .orn::before,.orn::after{content:"";width:40px;height:1px;background:currentColor;opacity:.5}
+  .orn svg{width:20px;height:20px}
 
   /* ----- 1페이지 ----- */
-  .p1 .title{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.45;text-wrap:balance;margin-top:12px}
-  .hero-art{aspect-ratio:4/5;width:100%;max-width:340px;margin:0 auto;border-radius:200px 200px 6px 6px;overflow:hidden;line-height:0}
+  .p1{padding-top:72px;gap:36px}
+  .p1::before{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none}
+  .hero-art{aspect-ratio:4/5;width:100%;max-width:300px;margin:0 auto;border-radius:200px 200px 0 0;overflow:hidden;line-height:0}
   .hero-art svg{width:100%;height:100%;display:block}
-  .wheat{width:26px;height:26px;color:var(--olive);margin:0 auto 12px}
-  .church{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:.32em;margin-right:-.32em}
-  .info{display:grid;gap:10px;font-size:15px}
-  .info .when{font-family:var(--serif);font-weight:700;font-size:17px}
-  .info .where{color:var(--sub)}
-  .p1 > *:not(.dots){animation:rise .9s ease both}
-  .p1 > :nth-child(2){animation-delay:.1s}.p1 > :nth-child(3){animation-delay:.2s}.p1 > :nth-child(4){animation-delay:.3s}
-  @keyframes rise{from{opacity:.001;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .hero-art .stem{fill:none;stroke:var(--stem);stroke-width:1.1;stroke-linecap:round}
+  .hero-art .awn{fill:none;stroke:var(--stem);stroke-width:.5;stroke-linecap:round;opacity:.75}
+  .hero-art .grain{fill:var(--grain)}
+  .hero-art .leaf{fill:var(--leaf);opacity:.8}
+  .hero-art .back{opacity:.45}
+  .p1 .title{font-family:var(--serif);font-weight:700;font-size:27px;line-height:1.45;letter-spacing:.02em;text-wrap:balance;margin-top:14px}
+  .p1 .sub-en{font-family:var(--latin);font-style:italic;font-size:17px;color:var(--sub);margin-top:4px}
+  .date{display:grid;gap:6px;justify-items:center}
+  .date .num{font-family:var(--latin);font-weight:400;font-size:52px;line-height:1;letter-spacing:.04em;color:var(--ink);font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+  .date .num i{font-style:normal;color:var(--gold);margin:0 .12em;font-size:.7em;vertical-align:.12em}
+  .date .meta{font-size:14px;color:var(--sub);letter-spacing:.12em}
+  .date .meta b{font-weight:500;color:var(--accent)}
+  .church{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.4em;margin-right:-.4em}
+  .where{font-size:13px;color:var(--sub);margin-top:4px;letter-spacing:.06em}
+  .p1 > *{animation:rise 1s ease both}
+  .p1 > :nth-child(2){animation-delay:.12s}.p1 > :nth-child(3){animation-delay:.24s}.p1 > :nth-child(4){animation-delay:.36s}.p1 > :nth-child(5){animation-delay:.48s}
+  @keyframes rise{from{opacity:.001;transform:translateY(10px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.p1 > *{animation:none}}
 
   /* ----- 2페이지 ----- */
-  .p2{gap:36px}
-  .loc{gap:28px;padding-block:96px 80px}
-  .loc .head{display:grid;gap:10px}
-  .loc h2{font-family:var(--serif);font-weight:700;font-size:20px}
-  .loc .navs{margin-top:-14px;margin-bottom:24px}
-  .loc .sign{margin-top:36px}
-  .shalom{font-family:var(--serif);font-size:21px;color:var(--accent)}
+  .p2{gap:40px;background:var(--paper)}
+  .shalom{font-family:var(--serif);font-size:20px;color:var(--accent);letter-spacing:.08em}
   .greet{font-family:var(--serif);font-size:16px;line-height:2.05;display:grid;gap:22px}
   .greet .em{color:var(--accent);white-space:nowrap}
-  .greet .from{margin-top:14px;font-size:15px;color:var(--sub);letter-spacing:.04em}
-  .greet .from b{color:var(--ink);font-weight:700;letter-spacing:.12em}
-  .verse{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:40px 22px 32px;margin-top:20px;position:relative}
+  .greet .from{margin-top:18px;font-size:14px;color:var(--sub);letter-spacing:.04em}
+  .greet .from b{color:var(--ink);font-weight:700;font-size:16px;letter-spacing:.14em;margin-left:4px}
+  .verse{padding:34px 8px 0;margin-top:8px;position:relative;border-top:1px solid var(--line)}
   .verse::before{
-    content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:44px;height:26px;
-    background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b8935a' d='M10 7H6a2 2 0 0 0-2 2v4h4v4H6v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2zm10 0h-4a2 2 0 0 0-2 2v4h4v4h-2v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2z'/%3E%3C/svg%3E") center/20px no-repeat;
+    content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:40px;height:18px;
+    background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c09a5b' d='M10 7H6a2 2 0 0 0-2 2v4h4v4H6v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2zm10 0h-4a2 2 0 0 0-2 2v4h4v4h-2v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2z'/%3E%3C/svg%3E") center/16px no-repeat;
   }
-  .verse p{font-family:var(--serif);font-size:15px;line-height:2.1}
-  .verse cite{display:block;margin-top:16px;font-style:normal;font-size:13px;color:var(--accent);letter-spacing:.08em}
-  .divider{display:flex;align-items:center;gap:12px;color:var(--gold)}
-  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  .verse p{font-family:var(--serif);font-size:15px;line-height:2.1;color:var(--ink)}
+  .verse cite{display:block;margin-top:14px;font-style:normal;font-size:12px;color:var(--gold);letter-spacing:.14em}
+
+  /* ----- 오시는 길 ----- */
+  .loc{gap:28px;padding-block:88px 80px;border-top:1px solid var(--line)}
+  .loc .head{display:grid;gap:10px}
+  .loc h2{font-family:var(--serif);font-weight:700;font-size:20px}
   .addr{display:grid;gap:6px}
   .addr strong{font-family:var(--serif);font-weight:700;font-size:16px}
   .addr span{color:var(--sub);font-size:14px;user-select:text;-webkit-user-select:text}
-  .roughmap{border:1px solid var(--line);border-radius:6px;overflow:hidden;line-height:0}
+  .roughmap{border:1px solid var(--line);border-radius:4px;overflow:hidden;line-height:0}
   .roughmap svg{width:100%;height:auto;display:block}
-  .navs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .navs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:-12px}
   .btn{
     display:inline-flex;align-items:center;justify-content:center;
-    padding:11px 6px;border-radius:6px;border:1px solid var(--line);
+    padding:12px 6px;border-radius:4px;border:1px solid var(--line);
     background:var(--paper);color:var(--ink);font:400 13px var(--sans);text-decoration:none;cursor:pointer;
+    transition:border-color .2s,background .2s;
   }
+  .btn:hover{border-color:var(--gold)}
   .btn:active{background:var(--accent-soft)}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sign{font-family:var(--serif);font-size:13px;color:var(--sub);letter-spacing:.2em}
+  .foot{margin-top:32px;font-family:var(--latin);font-style:italic;font-size:15px;color:var(--sub)}
 
-  /* ----- 화사한 버전 추가 ----- */
-  .p1{background:
-      radial-gradient(120% 70% at 50% 0%, #ffe3c7 0%, transparent 60%),
-      radial-gradient(90% 50% at 50% 100%, #fff0c2 0%, transparent 70%),
-      var(--bg);overflow:hidden}
-  .hero-art{border:2px solid var(--paper);box-shadow:0 0 0 6px var(--sun),0 14px 30px rgba(226,87,58,.18)}
-  .p1 .en{color:var(--accent);font-weight:500}
-  .p1 .title{color:var(--accent)}
-  .dots{position:absolute;inset:0;pointer-events:none}
-  .dots i{position:absolute;border-radius:50%;opacity:.9}
-  .info .when{display:inline-block;margin:0 auto;padding:6px 16px;border-radius:40px;background:var(--sun);color:var(--ink)}
-  .p2{background:linear-gradient(180deg,var(--bg) 0%,#fff3ea 100%)}
-  .verse{background:var(--accent-soft);border-color:transparent}
-  .verse::before{background-color:#fff6ef}
-  .shalom{font-weight:700}
-  .divider{color:var(--olive)}
-  .btn{border-color:var(--accent);color:var(--accent);font-weight:500}
-  .navs .btn:last-child{background:var(--accent);color:#fff}
-  .roughmap{border-color:var(--line)}
+  .logo{display:block;width:150px;height:auto;margin:28px auto 0}
 
   .toast{
     position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;
@@ -131,194 +113,114 @@
 </head>
 <body>
 
-
 <main class="wrap">
 
   <!-- ========== 1페이지 : 행사명 · 메인 이미지 · 일시 · 장소 ========== -->
   <section class="page p1">
-    <div class="dots" aria-hidden="true">
-      <i style="width:14px;height:14px;background:var(--sun);top:12%;left:9%"></i>
-      <i style="width:8px;height:8px;background:var(--berry);top:20%;right:12%"></i>
-      <i style="width:10px;height:10px;background:var(--leaf);top:44%;left:6%"></i>
-      <i style="width:16px;height:16px;background:var(--accent);opacity:.25;top:52%;right:7%"></i>
-      <i style="width:7px;height:7px;background:var(--sky);top:2.5%;right:22%"></i>
-      <i style="width:9px;height:9px;background:var(--sun);bottom:16%;right:14%"></i>
-      <i style="width:6px;height:6px;background:var(--berry);bottom:22%;left:16%"></i>
-    </div>
-    <div>
-      <div class="en">Thanksgiving Sunday</div>
-      <h1 class="title">추수감사 가족초청예배</h1>
-    </div>
+    <div class="en">Thanksgiving Sunday</div>
 
     <div class="hero-art">
-<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMid slice">
-<rect width="320" height="400" fill="var(--il-bg)"/>
-<circle cx="160" cy="150" r="96" fill="var(--il-halo)" opacity=".45"/>
-<circle cx="160" cy="150" r="62" fill="var(--il-halo)" opacity=".55"/>
-<path d="M133.0 300 Q84.5 214.0 52 128" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="47.5" cy="130.1" rx="7" ry="3.6" transform="rotate(-143.2 47.5 130.1)" fill="var(--il-wheat)"/>
-<ellipse cx="56.5" cy="125.9" rx="7" ry="3.6" transform="rotate(-87.2 56.5 125.9)" fill="var(--il-wheat)"/>
-<ellipse cx="52.2" cy="140.1" rx="7" ry="3.6" transform="rotate(-143.2 52.2 140.1)" fill="var(--il-wheat)"/>
-<ellipse cx="61.2" cy="135.8" rx="7" ry="3.6" transform="rotate(-87.2 61.2 135.8)" fill="var(--il-wheat)"/>
-<ellipse cx="56.8" cy="150.0" rx="7" ry="3.6" transform="rotate(-143.2 56.8 150.0)" fill="var(--il-wheat)"/>
-<ellipse cx="65.9" cy="145.8" rx="7" ry="3.6" transform="rotate(-87.2 65.9 145.8)" fill="var(--il-wheat)"/>
-<ellipse cx="61.5" cy="160.0" rx="7" ry="3.6" transform="rotate(-143.2 61.5 160.0)" fill="var(--il-wheat)"/>
-<ellipse cx="70.6" cy="155.7" rx="7" ry="3.6" transform="rotate(-87.2 70.6 155.7)" fill="var(--il-wheat)"/>
-<ellipse cx="66.2" cy="169.9" rx="7" ry="3.6" transform="rotate(-143.2 66.2 169.9)" fill="var(--il-wheat)"/>
-<ellipse cx="75.3" cy="165.7" rx="7" ry="3.6" transform="rotate(-87.2 75.3 165.7)" fill="var(--il-wheat)"/>
-<ellipse cx="70.9" cy="179.9" rx="7" ry="3.6" transform="rotate(-143.2 70.9 179.9)" fill="var(--il-wheat)"/>
-<ellipse cx="80.0" cy="175.6" rx="7" ry="3.6" transform="rotate(-87.2 80.0 175.6)" fill="var(--il-wheat)"/>
-<ellipse cx="49.4" cy="122.6" rx="6" ry="3.4" transform="rotate(-115.2 49.4 122.6)" fill="var(--il-wheat)"/>
-<path d="M141.0 300 Q104.5 198.0 84 96" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="79.2" cy="97.3" rx="7" ry="3.6" transform="rotate(-133.6 79.2 97.3)" fill="var(--il-wheat)"/>
-<ellipse cx="88.8" cy="94.7" rx="7" ry="3.6" transform="rotate(-77.6 88.8 94.7)" fill="var(--il-wheat)"/>
-<ellipse cx="82.1" cy="107.9" rx="7" ry="3.6" transform="rotate(-133.6 82.1 107.9)" fill="var(--il-wheat)"/>
-<ellipse cx="91.8" cy="105.2" rx="7" ry="3.6" transform="rotate(-77.6 91.8 105.2)" fill="var(--il-wheat)"/>
-<ellipse cx="85.1" cy="118.5" rx="7" ry="3.6" transform="rotate(-133.6 85.1 118.5)" fill="var(--il-wheat)"/>
-<ellipse cx="94.7" cy="115.8" rx="7" ry="3.6" transform="rotate(-77.6 94.7 115.8)" fill="var(--il-wheat)"/>
-<ellipse cx="88.1" cy="129.1" rx="7" ry="3.6" transform="rotate(-133.6 88.1 129.1)" fill="var(--il-wheat)"/>
-<ellipse cx="97.7" cy="126.4" rx="7" ry="3.6" transform="rotate(-77.6 97.7 126.4)" fill="var(--il-wheat)"/>
-<ellipse cx="91.0" cy="139.7" rx="7" ry="3.6" transform="rotate(-133.6 91.0 139.7)" fill="var(--il-wheat)"/>
-<ellipse cx="100.7" cy="137.0" rx="7" ry="3.6" transform="rotate(-77.6 100.7 137.0)" fill="var(--il-wheat)"/>
-<ellipse cx="94.0" cy="150.3" rx="7" ry="3.6" transform="rotate(-133.6 94.0 150.3)" fill="var(--il-wheat)"/>
-<ellipse cx="103.6" cy="147.6" rx="7" ry="3.6" transform="rotate(-77.6 103.6 147.6)" fill="var(--il-wheat)"/>
-<ellipse cx="82.4" cy="90.2" rx="6" ry="3.4" transform="rotate(-105.6 82.4 90.2)" fill="var(--il-wheat)"/>
-<path d="M149.5 300 Q125.75 189.0 118 78" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="113.0" cy="78.7" rx="7" ry="3.6" transform="rotate(-126.1 113.0 78.7)" fill="var(--il-wheat)"/>
-<ellipse cx="123.0" cy="77.3" rx="7" ry="3.6" transform="rotate(-70.1 123.0 77.3)" fill="var(--il-wheat)"/>
-<ellipse cx="114.6" cy="89.6" rx="7" ry="3.6" transform="rotate(-126.1 114.6 89.6)" fill="var(--il-wheat)"/>
-<ellipse cx="124.5" cy="88.2" rx="7" ry="3.6" transform="rotate(-70.1 124.5 88.2)" fill="var(--il-wheat)"/>
-<ellipse cx="116.1" cy="100.5" rx="7" ry="3.6" transform="rotate(-126.1 116.1 100.5)" fill="var(--il-wheat)"/>
-<ellipse cx="126.0" cy="99.1" rx="7" ry="3.6" transform="rotate(-70.1 126.0 99.1)" fill="var(--il-wheat)"/>
-<ellipse cx="117.7" cy="111.4" rx="7" ry="3.6" transform="rotate(-126.1 117.7 111.4)" fill="var(--il-wheat)"/>
-<ellipse cx="127.6" cy="110.0" rx="7" ry="3.6" transform="rotate(-70.1 127.6 110.0)" fill="var(--il-wheat)"/>
-<ellipse cx="119.2" cy="122.3" rx="7" ry="3.6" transform="rotate(-126.1 119.2 122.3)" fill="var(--il-wheat)"/>
-<ellipse cx="129.1" cy="120.9" rx="7" ry="3.6" transform="rotate(-70.1 129.1 120.9)" fill="var(--il-wheat)"/>
-<ellipse cx="120.8" cy="133.2" rx="7" ry="3.6" transform="rotate(-126.1 120.8 133.2)" fill="var(--il-wheat)"/>
-<ellipse cx="130.7" cy="131.8" rx="7" ry="3.6" transform="rotate(-70.1 130.7 131.8)" fill="var(--il-wheat)"/>
-<ellipse cx="117.2" cy="72.1" rx="6" ry="3.4" transform="rotate(-98.1 117.2 72.1)" fill="var(--il-wheat)"/>
-<path d="M170.5 300 Q194.25 189.0 202 78" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="197.0" cy="77.3" rx="7" ry="3.6" transform="rotate(-109.9 197.0 77.3)" fill="var(--il-wheat)"/>
-<ellipse cx="207.0" cy="78.7" rx="7" ry="3.6" transform="rotate(-53.9 207.0 78.7)" fill="var(--il-wheat)"/>
-<ellipse cx="195.5" cy="88.2" rx="7" ry="3.6" transform="rotate(-109.9 195.5 88.2)" fill="var(--il-wheat)"/>
-<ellipse cx="205.4" cy="89.6" rx="7" ry="3.6" transform="rotate(-53.9 205.4 89.6)" fill="var(--il-wheat)"/>
-<ellipse cx="194.0" cy="99.1" rx="7" ry="3.6" transform="rotate(-109.9 194.0 99.1)" fill="var(--il-wheat)"/>
-<ellipse cx="203.9" cy="100.5" rx="7" ry="3.6" transform="rotate(-53.9 203.9 100.5)" fill="var(--il-wheat)"/>
-<ellipse cx="192.4" cy="110.0" rx="7" ry="3.6" transform="rotate(-109.9 192.4 110.0)" fill="var(--il-wheat)"/>
-<ellipse cx="202.3" cy="111.4" rx="7" ry="3.6" transform="rotate(-53.9 202.3 111.4)" fill="var(--il-wheat)"/>
-<ellipse cx="190.9" cy="120.9" rx="7" ry="3.6" transform="rotate(-109.9 190.9 120.9)" fill="var(--il-wheat)"/>
-<ellipse cx="200.8" cy="122.3" rx="7" ry="3.6" transform="rotate(-53.9 200.8 122.3)" fill="var(--il-wheat)"/>
-<ellipse cx="189.3" cy="131.8" rx="7" ry="3.6" transform="rotate(-109.9 189.3 131.8)" fill="var(--il-wheat)"/>
-<ellipse cx="199.2" cy="133.2" rx="7" ry="3.6" transform="rotate(-53.9 199.2 133.2)" fill="var(--il-wheat)"/>
-<ellipse cx="202.8" cy="72.1" rx="6" ry="3.4" transform="rotate(-81.9 202.8 72.1)" fill="var(--il-wheat)"/>
-<path d="M179.0 300 Q215.5 198.0 236 96" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="231.2" cy="94.7" rx="7" ry="3.6" transform="rotate(-102.4 231.2 94.7)" fill="var(--il-wheat)"/>
-<ellipse cx="240.8" cy="97.3" rx="7" ry="3.6" transform="rotate(-46.4 240.8 97.3)" fill="var(--il-wheat)"/>
-<ellipse cx="228.2" cy="105.2" rx="7" ry="3.6" transform="rotate(-102.4 228.2 105.2)" fill="var(--il-wheat)"/>
-<ellipse cx="237.9" cy="107.9" rx="7" ry="3.6" transform="rotate(-46.4 237.9 107.9)" fill="var(--il-wheat)"/>
-<ellipse cx="225.3" cy="115.8" rx="7" ry="3.6" transform="rotate(-102.4 225.3 115.8)" fill="var(--il-wheat)"/>
-<ellipse cx="234.9" cy="118.5" rx="7" ry="3.6" transform="rotate(-46.4 234.9 118.5)" fill="var(--il-wheat)"/>
-<ellipse cx="222.3" cy="126.4" rx="7" ry="3.6" transform="rotate(-102.4 222.3 126.4)" fill="var(--il-wheat)"/>
-<ellipse cx="231.9" cy="129.1" rx="7" ry="3.6" transform="rotate(-46.4 231.9 129.1)" fill="var(--il-wheat)"/>
-<ellipse cx="219.3" cy="137.0" rx="7" ry="3.6" transform="rotate(-102.4 219.3 137.0)" fill="var(--il-wheat)"/>
-<ellipse cx="229.0" cy="139.7" rx="7" ry="3.6" transform="rotate(-46.4 229.0 139.7)" fill="var(--il-wheat)"/>
-<ellipse cx="216.4" cy="147.6" rx="7" ry="3.6" transform="rotate(-102.4 216.4 147.6)" fill="var(--il-wheat)"/>
-<ellipse cx="226.0" cy="150.3" rx="7" ry="3.6" transform="rotate(-46.4 226.0 150.3)" fill="var(--il-wheat)"/>
-<ellipse cx="237.6" cy="90.2" rx="6" ry="3.4" transform="rotate(-74.4 237.6 90.2)" fill="var(--il-wheat)"/>
-<path d="M187.0 300 Q235.5 214.0 268 128" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="263.5" cy="125.9" rx="7" ry="3.6" transform="rotate(-92.8 263.5 125.9)" fill="var(--il-wheat)"/>
-<ellipse cx="272.5" cy="130.1" rx="7" ry="3.6" transform="rotate(-36.8 272.5 130.1)" fill="var(--il-wheat)"/>
-<ellipse cx="258.8" cy="135.8" rx="7" ry="3.6" transform="rotate(-92.8 258.8 135.8)" fill="var(--il-wheat)"/>
-<ellipse cx="267.8" cy="140.1" rx="7" ry="3.6" transform="rotate(-36.8 267.8 140.1)" fill="var(--il-wheat)"/>
-<ellipse cx="254.1" cy="145.8" rx="7" ry="3.6" transform="rotate(-92.8 254.1 145.8)" fill="var(--il-wheat)"/>
-<ellipse cx="263.2" cy="150.0" rx="7" ry="3.6" transform="rotate(-36.8 263.2 150.0)" fill="var(--il-wheat)"/>
-<ellipse cx="249.4" cy="155.7" rx="7" ry="3.6" transform="rotate(-92.8 249.4 155.7)" fill="var(--il-wheat)"/>
-<ellipse cx="258.5" cy="160.0" rx="7" ry="3.6" transform="rotate(-36.8 258.5 160.0)" fill="var(--il-wheat)"/>
-<ellipse cx="244.7" cy="165.7" rx="7" ry="3.6" transform="rotate(-92.8 244.7 165.7)" fill="var(--il-wheat)"/>
-<ellipse cx="253.8" cy="169.9" rx="7" ry="3.6" transform="rotate(-36.8 253.8 169.9)" fill="var(--il-wheat)"/>
-<ellipse cx="240.0" cy="175.6" rx="7" ry="3.6" transform="rotate(-92.8 240.0 175.6)" fill="var(--il-wheat)"/>
-<ellipse cx="249.1" cy="179.9" rx="7" ry="3.6" transform="rotate(-36.8 249.1 179.9)" fill="var(--il-wheat)"/>
-<ellipse cx="270.6" cy="122.6" rx="6" ry="3.4" transform="rotate(-64.8 270.6 122.6)" fill="var(--il-wheat)"/>
-<path d="M127.5 300 Q70.75 235.0 30 170" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="26.0" cy="173.0" rx="7" ry="3.6" transform="rotate(-154.9 26.0 173.0)" fill="var(--il-wheat)"/>
-<ellipse cx="34.0" cy="167.0" rx="7" ry="3.6" transform="rotate(-98.9 34.0 167.0)" fill="var(--il-wheat)"/>
-<ellipse cx="32.6" cy="181.8" rx="7" ry="3.6" transform="rotate(-154.9 32.6 181.8)" fill="var(--il-wheat)"/>
-<ellipse cx="40.6" cy="175.8" rx="7" ry="3.6" transform="rotate(-98.9 40.6 175.8)" fill="var(--il-wheat)"/>
-<ellipse cx="39.2" cy="190.6" rx="7" ry="3.6" transform="rotate(-154.9 39.2 190.6)" fill="var(--il-wheat)"/>
-<ellipse cx="47.2" cy="184.6" rx="7" ry="3.6" transform="rotate(-98.9 47.2 184.6)" fill="var(--il-wheat)"/>
-<ellipse cx="45.8" cy="199.4" rx="7" ry="3.6" transform="rotate(-154.9 45.8 199.4)" fill="var(--il-wheat)"/>
-<ellipse cx="53.8" cy="193.4" rx="7" ry="3.6" transform="rotate(-98.9 53.8 193.4)" fill="var(--il-wheat)"/>
-<ellipse cx="52.4" cy="208.2" rx="7" ry="3.6" transform="rotate(-154.9 52.4 208.2)" fill="var(--il-wheat)"/>
-<ellipse cx="60.4" cy="202.2" rx="7" ry="3.6" transform="rotate(-98.9 60.4 202.2)" fill="var(--il-wheat)"/>
-<ellipse cx="59.0" cy="217.0" rx="7" ry="3.6" transform="rotate(-154.9 59.0 217.0)" fill="var(--il-wheat)"/>
-<ellipse cx="67.0" cy="211.0" rx="7" ry="3.6" transform="rotate(-98.9 67.0 211.0)" fill="var(--il-wheat)"/>
-<ellipse cx="26.4" cy="165.2" rx="6" ry="3.4" transform="rotate(-126.9 26.4 165.2)" fill="var(--il-wheat)"/>
-<path d="M192.5 300 Q249.25 235.0 290 170" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<ellipse cx="286.0" cy="167.0" rx="7" ry="3.6" transform="rotate(-81.1 286.0 167.0)" fill="var(--il-wheat)"/>
-<ellipse cx="294.0" cy="173.0" rx="7" ry="3.6" transform="rotate(-25.1 294.0 173.0)" fill="var(--il-wheat)"/>
-<ellipse cx="279.4" cy="175.8" rx="7" ry="3.6" transform="rotate(-81.1 279.4 175.8)" fill="var(--il-wheat)"/>
-<ellipse cx="287.4" cy="181.8" rx="7" ry="3.6" transform="rotate(-25.1 287.4 181.8)" fill="var(--il-wheat)"/>
-<ellipse cx="272.8" cy="184.6" rx="7" ry="3.6" transform="rotate(-81.1 272.8 184.6)" fill="var(--il-wheat)"/>
-<ellipse cx="280.8" cy="190.6" rx="7" ry="3.6" transform="rotate(-25.1 280.8 190.6)" fill="var(--il-wheat)"/>
-<ellipse cx="266.2" cy="193.4" rx="7" ry="3.6" transform="rotate(-81.1 266.2 193.4)" fill="var(--il-wheat)"/>
-<ellipse cx="274.2" cy="199.4" rx="7" ry="3.6" transform="rotate(-25.1 274.2 199.4)" fill="var(--il-wheat)"/>
-<ellipse cx="259.6" cy="202.2" rx="7" ry="3.6" transform="rotate(-81.1 259.6 202.2)" fill="var(--il-wheat)"/>
-<ellipse cx="267.6" cy="208.2" rx="7" ry="3.6" transform="rotate(-25.1 267.6 208.2)" fill="var(--il-wheat)"/>
-<ellipse cx="253.0" cy="211.0" rx="7" ry="3.6" transform="rotate(-81.1 253.0 211.0)" fill="var(--il-wheat)"/>
-<ellipse cx="261.0" cy="217.0" rx="7" ry="3.6" transform="rotate(-25.1 261.0 217.0)" fill="var(--il-wheat)"/>
-<ellipse cx="293.6" cy="165.2" rx="6" ry="3.4" transform="rotate(-53.1 293.6 165.2)" fill="var(--il-wheat)"/>
-<rect x="0" y="336" width="320" height="64" fill="var(--il-table)"/>
-<path d="M0 336 H320" stroke="var(--il-basket-d)" stroke-width="1.5" opacity=".35"/>
-<g fill="none" stroke="var(--il-basket-d)" stroke-width="1" opacity=".25"><path d="M0 356 H320"/><path d="M0 376 H320"/></g>
-<ellipse cx="78" cy="214" rx="20" ry="9" transform="rotate(-35 78 214)" fill="var(--il-3)"/>
-<ellipse cx="242" cy="206" rx="20" ry="9" transform="rotate(30 242 206)" fill="var(--il-3)"/>
-<ellipse cx="176" cy="190" rx="20" ry="9" transform="rotate(10 176 190)" fill="var(--il-3)"/>
-<circle cx="96" cy="214" r="9" fill="var(--il-4)"/>
-<circle cx="112" cy="210" r="9" fill="var(--il-4)"/>
-<circle cx="88" cy="228" r="9" fill="var(--il-4)"/>
-<circle cx="104" cy="226" r="9" fill="var(--il-4)"/>
-<circle cx="120" cy="224" r="9" fill="var(--il-4)"/>
-<circle cx="96" cy="242" r="9" fill="var(--il-4)"/>
-<circle cx="112" cy="240" r="9" fill="var(--il-4)"/>
-<circle cx="104" cy="254" r="9" fill="var(--il-4)"/>
-<path d="M106 202 q2 -10 10 -14" stroke="var(--il-3)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-<circle cx="236" cy="236" r="24" fill="var(--il-berry)"/><path d="M236 214 q1 -9 6 -12" stroke="var(--il-basket-d)" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="228" cy="228" rx="5" ry="8" fill="#fff" opacity=".25"/>
-<ellipse cx="150" cy="224" rx="34" ry="27" fill="var(--il-1)"/>
-<g fill="var(--il-3)" transform="translate(150 193)"><path d="M0 0 L-12 -3 L-4 4 Z"/><path d="M0 0 L12 -3 L4 4 Z"/><path d="M0 0 L-6 -10 L2 -2 Z"/><path d="M0 0 L7 -9 L-1 -2 Z"/></g>
-<ellipse cx="139" cy="216" rx="6" ry="10" fill="#fff" opacity=".22"/>
-<ellipse cx="198" cy="236" rx="28" ry="22" fill="var(--il-1)"/>
-<g fill="var(--il-3)" transform="translate(198 211)"><path d="M0 0 L-12 -3 L-4 4 Z"/><path d="M0 0 L12 -3 L4 4 Z"/><path d="M0 0 L-6 -10 L2 -2 Z"/><path d="M0 0 L7 -9 L-1 -2 Z"/></g>
-<ellipse cx="189" cy="229" rx="5" ry="8" fill="#fff" opacity=".22"/>
-<path d="M70 252 L250 252 L230 338 L90 338 Z" fill="var(--il-basket)"/>
-<g stroke="var(--il-basket-d)" stroke-width="2" fill="none" opacity=".6"><path d="M75 274 H245"/><path d="M80 296 H240"/><path d="M85 318 H235"/><path d="M96 254 L104 336"/><path d="M118 254 L123 336"/><path d="M140 254 L142 336"/><path d="M162 254 L162 336"/><path d="M184 254 L181 336"/><path d="M206 254 L200 336"/><path d="M228 254 L220 336"/></g>
-<rect x="60" y="242" width="200" height="18" rx="9" fill="var(--il-basket-d)"/>
-<g transform="translate(46 344)"><ellipse cx="-14" cy="0" rx="16" ry="20" fill="var(--il-2)"/><ellipse cx="14" cy="0" rx="16" ry="20" fill="var(--il-2)"/><ellipse cx="0" cy="0" rx="16" ry="21" fill="var(--il-2)" stroke="var(--il-basket-d)" stroke-opacity=".25" stroke-width="1.5"/><path d="M0 -20 q2 -8 8 -11" stroke="var(--il-3)" stroke-width="4" fill="none" stroke-linecap="round"/></g>
-<g transform="translate(272 350)"><ellipse cx="0" cy="0" rx="36" ry="19" fill="var(--il-bread)"/><g stroke="var(--il-basket-d)" stroke-width="2.4" stroke-linecap="round" opacity=".55"><path d="M-18 -10 l8 12"/><path d="M-3 -13 l8 13"/><path d="M12 -11 l8 12"/></g></g>
-<path d="M60 54 L61.6 58.4 L66 60 L61.6 61.6 L60 66 L58.4 61.6 L54 60 L58.4 58.4 Z" fill="var(--il-2)" opacity=".8"/>
-<path d="M262 46 L263.6 50.4 L268 52 L263.6 53.6 L262 58 L260.4 53.6 L256 52 L260.4 50.4 Z" fill="var(--il-2)" opacity=".8"/>
-<path d="M40 244 L41.6 248.4 L46 250 L41.6 251.6 L40 256 L38.4 251.6 L34 250 L38.4 248.4 Z" fill="var(--il-2)" opacity=".8"/>
-<path d="M286 256 L287.6 260.4 L292 262 L287.6 263.6 L286 268 L284.4 263.6 L280 262 L284.4 260.4 Z" fill="var(--il-2)" opacity=".8"/>
-</svg>
+      <svg viewBox="0 0 320 400" role="img" aria-label="해가 떠오르는 언덕 위로 밀 이삭이 바람에 흔들리는 풍경" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--sky-1)"/>
+            <stop offset=".7" stop-color="var(--sky-2)"/>
+          </linearGradient>
+          <radialGradient id="glow" cx=".5" cy=".66" r=".55">
+            <stop offset="0" stop-color="#fff6e4" stop-opacity="1"/>
+            <stop offset=".4" stop-color="#ffeccd" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#ffeccd" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--hill-3)" stop-opacity="0"/>
+            <stop offset="1" stop-color="var(--hill-3)" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <rect width="320" height="400" fill="url(#sky)"/>
+        <rect width="320" height="400" fill="url(#glow)"/>
+        <circle cx="160" cy="262" r="64" fill="var(--sun)" opacity=".35"/>
+        <circle cx="160" cy="262" r="42" fill="var(--sun)"/>
+        <path d="M0 268 C60 250 110 256 160 266 S260 252 320 262 V400 H0Z" fill="var(--hill-1)"/>
+        <path d="M0 296 C70 280 130 300 200 290 S290 280 320 288 V400 H0Z" fill="var(--hill-2)"/>
+        <path d="M0 330 C80 318 170 336 320 322 V400 H0Z" fill="var(--hill-3)"/>
+        <g class="field">
+        <g class="st back">
+        <path class="stem" d="M40.0 430.0Q25.0 310.0 30.0 190.0"/>
+        <path class="awn" d="M24.0 235.3l-2.9 -13.3M33.6 235.4l4.5 -19.4M24.1 230.5l-3.2 -15.2M33.7 230.6l3.4 -14.6M24.2 224.4l-3.8 -18.2M33.8 224.6l4.0 -16.8M24.3 218.4l-3.2 -15.5M33.9 218.6l4.4 -18.2M24.4 213.6l-3.7 -18.4M34.0 213.8l4.1 -16.8M24.6 207.6l-3.5 -17.9M34.2 207.8l4.4 -17.4M24.8 201.6l-3.6 -18.8M34.3 201.9l3.8 -14.8M25.4 197.2l-3.0 -15.9M34.0 197.5l4.6 -17.8M26.1 191.6l-3.3 -18.0M33.8 191.8l3.6 -13.5M30.1 187.0l0.8 -20.4"/>
+        <g class="grain"><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(25.7 239.2) rotate(-113.7)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(31.9 239.2) rotate(-65.5)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(25.8 234.4) rotate(-113.5)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(31.9 234.4) rotate(-65.3)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(25.9 228.4) rotate(-113.2)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(32.0 228.4) rotate(-65.1)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(26.0 222.3) rotate(-113.0)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(32.1 222.5) rotate(-64.9)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(26.1 217.5) rotate(-112.8)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(32.2 217.7) rotate(-64.7)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(26.2 211.5) rotate(-112.6)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(32.3 211.7) rotate(-64.4)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(26.4 205.5) rotate(-112.3)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(32.5 205.7) rotate(-64.2)"/><path d="M-4.8 0Q0 -3.3 4.8 0Q0 3.3 -4.8 0Z" transform="translate(26.8 200.7) rotate(-112.1)"/><path d="M-4.8 0Q0 -3.3 4.8 0Q0 3.3 -4.8 0Z" transform="translate(32.3 200.9) rotate(-64.0)"/><path d="M-4.3 0Q0 -2.9 4.3 0Q0 2.9 -4.3 0Z" transform="translate(27.4 194.7) rotate(-111.9)"/><path d="M-4.3 0Q0 -2.9 4.3 0Q0 2.9 -4.3 0Z" transform="translate(32.3 194.9) rotate(-63.8)"/><path d="M-4.3 0Q0 -2.7 4.3 0Q0 2.7 -4.3 0Z" transform="translate(29.9 192.0) rotate(-87.6)"/></g>
+        </g>
+        <g class="st back">
+        <path class="stem" d="M282.0 430.0Q303.0 315.0 296.0 200.0"/>
+        <path class="awn" d="M292.9 244.5l-4.1 -17.8M302.5 244.4l3.5 -16.4M292.8 238.7l-4.6 -19.3M302.4 238.6l3.9 -18.7M292.6 233.0l-3.4 -14.0M302.2 232.8l3.4 -16.8M292.5 228.4l-4.8 -19.3M302.1 228.2l3.5 -17.9M292.3 222.7l-4.5 -17.4M301.9 222.4l3.3 -17.2M292.1 217.0l-5.1 -19.1M301.7 216.6l3.6 -19.5M291.9 212.4l-4.2 -15.6M301.5 212.0l2.8 -15.6M292.1 207.1l-5.1 -18.6M300.7 206.6l2.7 -15.6M292.3 201.7l-4.0 -14.1M299.9 201.3l2.6 -15.4M295.8 197.0l-1.2 -20.4"/>
+        <g class="grain"><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.6 248.3) rotate(-114.6)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.8 248.3) rotate(-66.5)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.6 242.6) rotate(-114.9)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.7 242.5) rotate(-66.8)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.5 236.9) rotate(-115.3)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.6 236.7) rotate(-67.2)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.4 232.3) rotate(-115.6)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.5 232.1) rotate(-67.4)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.2 226.5) rotate(-115.9)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.3 226.4) rotate(-67.8)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(294.0 220.8) rotate(-116.3)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(300.1 220.6) rotate(-68.1)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(293.8 216.2) rotate(-116.5)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(299.9 216.0) rotate(-68.4)"/><path d="M-4.8 0Q0 -3.3 4.8 0Q0 3.3 -4.8 0Z" transform="translate(293.8 210.5) rotate(-116.9)"/><path d="M-4.8 0Q0 -3.3 4.8 0Q0 3.3 -4.8 0Z" transform="translate(299.3 210.2) rotate(-68.8)"/><path d="M-4.3 0Q0 -2.9 4.3 0Q0 2.9 -4.3 0Z" transform="translate(293.8 204.7) rotate(-117.2)"/><path d="M-4.3 0Q0 -2.9 4.3 0Q0 2.9 -4.3 0Z" transform="translate(298.7 204.5) rotate(-69.1)"/><path d="M-4.3 0Q0 -2.7 4.3 0Q0 2.7 -4.3 0Z" transform="translate(296.1 202.0) rotate(-93.4)"/></g>
+        </g>
+        <g class="st back">
+        <path class="stem" d="M120.0 430.0Q120.0 328.0 104.0 226.0"/>
+        <path class="awn" d="M105.2 266.8l-5.2 -14.6M114.2 265.7l1.4 -14.6M104.6 261.7l-6.4 -17.7M113.5 260.6l1.5 -16.3M103.9 256.6l-6.0 -16.4M112.8 255.5l1.7 -18.3M103.3 252.6l-4.6 -12.4M112.3 251.4l1.3 -14.5M102.6 247.5l-5.7 -15.4M111.6 246.2l1.3 -16.0M101.9 242.4l-5.5 -14.5M110.9 241.1l1.1 -14.0M101.2 237.3l-6.6 -17.4M110.1 236.0l1.0 -13.1M100.9 232.5l-5.5 -14.1M108.9 231.3l1.1 -15.0M100.6 227.7l-6.2 -15.9M107.8 226.6l1.3 -18.7M103.5 223.0l-3.0 -19.0"/>
+        <g class="grain"><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(107.3 270.2) rotate(-121.1)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(113.0 269.5) rotate(-72.9)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(106.6 265.1) rotate(-121.3)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(112.4 264.4) rotate(-73.2)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(106.0 260.0) rotate(-121.5)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(111.7 259.3) rotate(-73.4)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(105.4 256.0) rotate(-121.7)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(111.2 255.2) rotate(-73.6)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(104.8 250.9) rotate(-121.9)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(110.5 250.1) rotate(-73.8)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(104.0 245.8) rotate(-122.1)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(109.7 245.0) rotate(-74.0)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(103.3 240.7) rotate(-122.3)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(109.0 239.9) rotate(-74.2)"/><path d="M-4.5 0Q0 -3.1 4.5 0Q0 3.1 -4.5 0Z" transform="translate(102.8 235.6) rotate(-122.6)"/><path d="M-4.5 0Q0 -3.1 4.5 0Q0 3.1 -4.5 0Z" transform="translate(108.0 234.8) rotate(-74.4)"/><path d="M-4.0 0Q0 -2.8 4.0 0Q0 2.8 -4.0 0Z" transform="translate(102.4 230.4) rotate(-122.8)"/><path d="M-4.0 0Q0 -2.8 4.0 0Q0 2.8 -4.0 0Z" transform="translate(106.9 229.7) rotate(-74.7)"/><path d="M-4.0 0Q0 -2.6 4.0 0Q0 2.6 -4.0 0Z" transform="translate(104.3 228.0) rotate(-98.9)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M62.0 430.0Q44.0 281.0 78.0 132.0"/>
+        <path class="leaf" d="M57.4 273.5Q31.4 245.8 22.9 208.6Q38.4 242.0 57.4 273.5Z"/>
+        <path class="awn" d="M61.4 185.9l-1.2 -18.2M73.1 187.8l7.4 -18.8M62.6 178.5l-1.1 -19.2M74.3 180.4l7.5 -18.4M63.7 172.5l-1.0 -20.3M75.4 174.5l7.5 -18.1M65.1 165.0l-0.9 -21.2M76.7 167.1l8.6 -20.2M66.2 159.0l-0.6 -18.7M77.9 161.2l9.7 -22.4M67.7 151.5l-0.5 -20.6M79.3 153.8l9.7 -22.0M69.0 145.5l-0.4 -22.1M80.6 147.9l9.1 -20.2M71.1 138.6l-0.2 -21.1M81.5 140.8l8.8 -19.1M72.9 133.2l-0.1 -22.6M82.1 135.2l10.4 -22.4M78.7 129.1l5.6 -24.6"/>
+        <g class="grain"><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(62.7 191.0) rotate(-105.1)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(70.2 192.2) rotate(-57.0)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(64.0 183.5) rotate(-104.6)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(71.4 184.8) rotate(-56.5)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(65.0 177.5) rotate(-104.2)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(72.4 178.8) rotate(-56.1)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(66.3 170.1) rotate(-103.8)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(73.8 171.4) rotate(-55.6)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(67.4 164.1) rotate(-103.4)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(74.9 165.5) rotate(-55.2)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(68.9 156.6) rotate(-102.9)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(76.3 158.1) rotate(-54.8)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(70.1 150.6) rotate(-102.5)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(77.5 152.1) rotate(-54.4)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(72.0 143.2) rotate(-102.0)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(78.7 144.6) rotate(-53.9)"/><path d="M-5.3 0Q0 -3.6 5.3 0Q0 3.6 -5.3 0Z" transform="translate(73.7 137.3) rotate(-101.6)"/><path d="M-5.3 0Q0 -3.6 5.3 0Q0 3.6 -5.3 0Z" transform="translate(79.6 138.6) rotate(-53.5)"/><path d="M-5.3 0Q0 -3.4 5.3 0Q0 3.4 -5.3 0Z" transform="translate(77.6 134.0) rotate(-77.2)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M30.0 430.0Q30.0 290.0 18.0 150.0"/>
+        <path class="awn" d="M16.3 200.4l-5.5 -18.4M27.5 199.7l3.3 -21.4M15.9 194.8l-5.2 -17.3M27.1 194.0l3.1 -20.5M15.4 187.9l-5.4 -18.0M26.6 187.0l2.7 -18.4M15.0 182.3l-5.5 -18.3M26.2 181.4l3.2 -22.1M14.5 176.7l-6.7 -22.0M25.8 175.8l2.4 -16.7M14.0 169.7l-6.6 -21.6M25.2 168.8l2.4 -16.5M13.5 164.1l-5.7 -18.4M24.8 163.2l2.4 -17.1M13.5 157.5l-4.9 -15.9M23.7 156.7l3.3 -23.7M13.7 152.3l-5.3 -16.9M22.7 151.6l2.9 -20.9M17.7 147.0l-2.0 -23.9"/>
+        <g class="grain"><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(18.6 204.8) rotate(-118.0)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(25.8 204.4) rotate(-69.9)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(18.2 199.3) rotate(-118.1)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(25.4 198.7) rotate(-70.0)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(17.7 192.3) rotate(-118.2)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(24.9 191.7) rotate(-70.1)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(17.3 186.7) rotate(-118.3)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(24.5 186.1) rotate(-70.2)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(16.9 181.1) rotate(-118.4)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(24.1 180.5) rotate(-70.3)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(16.4 174.1) rotate(-118.5)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(23.5 173.5) rotate(-70.4)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(15.9 168.5) rotate(-118.6)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(23.1 167.9) rotate(-70.5)"/><path d="M-5.6 0Q0 -3.9 5.6 0Q0 3.9 -5.6 0Z" transform="translate(15.7 161.5) rotate(-118.8)"/><path d="M-5.6 0Q0 -3.9 5.6 0Q0 3.9 -5.6 0Z" transform="translate(22.2 160.9) rotate(-70.6)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(15.6 155.8) rotate(-118.9)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(21.3 155.4) rotate(-70.7)"/><path d="M-5.0 0Q0 -3.2 5.0 0Q0 3.2 -5.0 0Z" transform="translate(18.2 152.0) rotate(-94.9)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M96.0 430.0Q103.0 301.0 122.0 172.0"/>
+        <path class="awn" d="M110.0 219.9l-1.5 -16.2M120.6 221.3l6.4 -17.6M110.8 213.4l-1.8 -19.6M121.4 214.8l5.6 -15.3M111.5 208.3l-2.0 -22.1M122.1 209.7l7.5 -20.6M112.4 201.8l-1.9 -21.9M123.0 203.2l7.6 -20.6M113.1 196.6l-1.9 -22.0M123.7 198.1l7.3 -19.7M114.0 190.2l-1.4 -17.2M124.6 191.7l5.4 -14.3M114.9 183.7l-1.4 -17.0M125.5 185.2l5.6 -14.8M116.1 179.1l-1.2 -15.2M125.6 180.4l7.0 -18.6M117.5 173.1l-1.3 -16.9M126.0 174.3l7.4 -19.5M122.4 169.0l3.3 -22.6"/>
+        <g class="grain"><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(111.3 224.5) rotate(-106.8)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(118.1 225.3) rotate(-58.6)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(112.2 218.0) rotate(-106.6)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(118.9 218.9) rotate(-58.5)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(112.8 212.8) rotate(-106.5)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(119.6 213.7) rotate(-58.4)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(113.7 206.4) rotate(-106.4)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(120.5 207.3) rotate(-58.3)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(114.4 201.2) rotate(-106.3)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(121.2 202.1) rotate(-58.2)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(115.3 194.8) rotate(-106.2)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(122.1 195.7) rotate(-58.0)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(116.2 188.3) rotate(-106.0)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(123.0 189.2) rotate(-57.9)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(117.3 183.2) rotate(-105.9)"/><path d="M-5.3 0Q0 -3.7 5.3 0Q0 3.7 -5.3 0Z" transform="translate(123.4 184.0) rotate(-57.8)"/><path d="M-4.7 0Q0 -3.3 4.7 0Q0 3.3 -4.7 0Z" transform="translate(118.5 176.8) rotate(-105.8)"/><path d="M-4.7 0Q0 -3.3 4.7 0Q0 3.3 -4.7 0Z" transform="translate(124.0 177.6) rotate(-57.7)"/><path d="M-4.8 0Q0 -3.0 4.8 0Q0 3.0 -4.8 0Z" transform="translate(121.7 174.0) rotate(-81.6)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M262.0 430.0Q278.0 276.0 246.0 122.0"/>
+        <path class="leaf" d="M265.4 265.2Q291.4 237.4 299.8 200.3Q284.4 233.7 265.4 265.2Z"/>
+        <path class="awn" d="M250.3 179.7l-8.0 -21.1M262.1 178.0l1.4 -18.7M249.2 172.1l-8.8 -22.6M260.9 170.3l1.3 -18.7M248.2 165.9l-7.3 -18.5M259.9 164.1l1.5 -24.3M246.9 158.3l-6.7 -16.5M258.6 156.3l1.1 -20.9M245.8 152.2l-6.4 -15.6M257.5 150.1l1.2 -24.4M244.4 144.5l-8.6 -20.4M256.1 142.4l1.0 -24.5M243.3 138.4l-6.7 -15.6M254.9 136.2l0.9 -24.3M242.4 131.1l-7.4 -16.8M252.9 129.1l0.7 -24.9M241.9 125.3l-8.8 -19.7M251.1 123.5l0.5 -22.5M245.4 119.1l-5.1 -24.7"/>
+        <g class="grain"><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(253.1 184.1) rotate(-122.3)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(260.6 183.1) rotate(-74.2)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(252.0 176.5) rotate(-122.7)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(259.5 175.3) rotate(-74.6)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(251.0 170.3) rotate(-123.1)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(258.5 169.1) rotate(-75.0)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(249.8 162.7) rotate(-123.5)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(257.2 161.4) rotate(-75.4)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(248.7 156.5) rotate(-123.9)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(256.2 155.2) rotate(-75.7)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(247.4 148.9) rotate(-124.3)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(254.8 147.5) rotate(-76.2)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(246.2 142.7) rotate(-124.6)"/><path d="M-6.6 0Q0 -4.5 6.6 0Q0 4.5 -6.6 0Z" transform="translate(253.7 141.3) rotate(-76.5)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(245.1 135.0) rotate(-125.1)"/><path d="M-5.9 0Q0 -4.1 5.9 0Q0 4.1 -5.9 0Z" transform="translate(251.8 133.7) rotate(-76.9)"/><path d="M-5.3 0Q0 -3.6 5.3 0Q0 3.6 -5.3 0Z" transform="translate(244.3 128.8) rotate(-125.4)"/><path d="M-5.3 0Q0 -3.6 5.3 0Q0 3.6 -5.3 0Z" transform="translate(250.2 127.6) rotate(-77.3)"/><path d="M-5.3 0Q0 -3.4 5.3 0Q0 3.4 -5.3 0Z" transform="translate(246.4 124.0) rotate(-101.7)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M296.0 430.0Q291.0 295.0 302.0 160.0"/>
+        <path class="awn" d="M292.8 210.5l-2.9 -17.9M304.1 211.1l4.9 -17.1M293.2 203.7l-2.8 -17.4M304.5 204.4l5.7 -19.7M293.5 198.3l-2.6 -16.2M304.8 199.0l6.2 -21.3M294.0 191.5l-3.3 -21.3M305.2 192.3l6.1 -20.8M294.5 184.8l-3.0 -19.8M305.7 185.5l4.6 -15.6M294.8 179.3l-2.5 -16.7M306.1 180.1l6.7 -22.4M295.3 172.6l-2.5 -16.9M306.6 173.4l6.2 -20.6M296.3 167.7l-3.3 -22.9M306.4 168.4l4.7 -15.6M297.4 161.4l-3.2 -22.8M306.4 162.1l6.7 -21.9M302.2 157.0l1.9 -23.9"/>
+        <g class="grain"><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(294.6 215.1) rotate(-110.8)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(301.8 215.6) rotate(-62.7)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(295.0 208.4) rotate(-110.6)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(302.2 208.8) rotate(-62.5)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(295.3 203.0) rotate(-110.5)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(302.5 203.4) rotate(-62.4)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(295.7 196.2) rotate(-110.3)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(302.9 196.7) rotate(-62.2)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(296.2 189.5) rotate(-110.2)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(303.4 189.9) rotate(-62.0)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(296.6 184.0) rotate(-110.0)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(303.7 184.6) rotate(-61.9)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(297.0 177.3) rotate(-109.9)"/><path d="M-6.3 0Q0 -4.3 6.3 0Q0 4.3 -6.3 0Z" transform="translate(304.2 177.8) rotate(-61.7)"/><path d="M-5.6 0Q0 -3.9 5.6 0Q0 3.9 -5.6 0Z" transform="translate(297.8 171.9) rotate(-109.7)"/><path d="M-5.6 0Q0 -3.9 5.6 0Q0 3.9 -5.6 0Z" transform="translate(304.3 172.4) rotate(-61.6)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(298.7 165.2) rotate(-109.6)"/><path d="M-5.0 0Q0 -3.4 5.0 0Q0 3.4 -5.0 0Z" transform="translate(304.4 165.6) rotate(-61.4)"/><path d="M-5.0 0Q0 -3.2 5.0 0Q0 3.2 -5.0 0Z" transform="translate(301.8 162.0) rotate(-85.4)"/></g>
+        </g>
+        <g class="st ">
+        <path class="stem" d="M232.0 430.0Q229.0 307.0 206.0 184.0"/>
+        <path class="awn" d="M208.8 231.1l-8.0 -20.5M219.1 229.5l1.5 -21.7M208.1 226.2l-7.5 -18.9M218.3 224.6l1.2 -17.8M207.1 220.0l-6.1 -15.4M217.3 218.4l1.2 -20.0M206.0 213.9l-7.9 -19.7M216.3 212.2l1.0 -17.6M205.2 209.0l-6.2 -15.2M215.4 207.3l0.9 -17.7M204.2 202.9l-8.1 -19.7M214.4 201.1l0.9 -18.8M203.1 196.8l-6.6 -16.0M213.3 195.0l0.9 -19.3M202.8 192.2l-7.8 -18.6M212.0 190.5l0.7 -17.2M202.2 186.4l-7.8 -18.5M210.4 184.9l0.7 -17.8M205.4 181.1l-4.0 -21.7"/>
+        <g class="grain"><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(211.3 234.9) rotate(-122.8)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(217.9 233.9) rotate(-74.6)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(210.6 230.0) rotate(-123.0)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(217.1 229.0) rotate(-74.8)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(209.6 223.9) rotate(-123.2)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(216.1 222.8) rotate(-75.1)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(208.6 217.7) rotate(-123.4)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(215.1 216.7) rotate(-75.3)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(207.8 212.8) rotate(-123.6)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(214.3 211.7) rotate(-75.5)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(206.7 206.7) rotate(-123.8)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(213.2 205.6) rotate(-75.7)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(205.6 200.6) rotate(-124.0)"/><path d="M-5.8 0Q0 -4.0 5.8 0Q0 4.0 -5.8 0Z" transform="translate(212.2 199.4) rotate(-75.9)"/><path d="M-5.2 0Q0 -3.6 5.2 0Q0 3.6 -5.2 0Z" transform="translate(205.1 195.6) rotate(-124.2)"/><path d="M-5.2 0Q0 -3.6 5.2 0Q0 3.6 -5.2 0Z" transform="translate(211.0 194.5) rotate(-76.1)"/><path d="M-4.6 0Q0 -3.2 4.6 0Q0 3.2 -4.6 0Z" transform="translate(204.3 189.4) rotate(-124.5)"/><path d="M-4.6 0Q0 -3.2 4.6 0Q0 3.2 -4.6 0Z" transform="translate(209.5 188.4) rotate(-76.3)"/><path d="M-4.6 0Q0 -2.9 4.6 0Q0 2.9 -4.6 0Z" transform="translate(206.4 186.0) rotate(-100.6)"/></g>
+        </g>
+        </g>
+        <rect y="330" width="320" height="70" fill="url(#fade)"/>
+      </svg>
     </div>
 
     <div>
-      <svg class="wheat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+      <h1 class="title">추수감사 가족초청예배</h1>
+      <div class="sub-en">with joy &amp; gratitude</div>
+    </div>
+
+    <div class="date">
+      <div class="num">10<i>/</i>18</div>
+      <div class="meta">2026 · <b>주일</b> 오전 11시</div>
+    </div>
+
+    <div>
+      <div class="church">은천교회</div>
+      <div class="where">본당</div>
+    </div>
+  </section>
+
+  <!-- ========== 2페이지 : 초대의 글 ========== -->
+  <section class="page p2">
+    <div class="orn" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
         <path d="M12 22V8"/><path d="M12 8c-2-1-3-3-3-5 2 0 3 2 3 5z"/><path d="M12 8c2-1 3-3 3-5-2 0-3 2-3 5z"/>
         <path d="M12 13c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 13c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
         <path d="M12 18c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 18c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
       </svg>
-      <div class="church">은천교회</div>
     </div>
-
-    <div class="info">
-      <div class="when">2026년 10월 18일 주일 오전 11시</div>
-      <div class="where">은천교회 본당</div>
-    </div>
-
-  </section>
-
-  <!-- ========== 2페이지 : 초대의 글 · 주소 · 약도 ========== -->
-  <section class="page p2">
     <div class="shalom">샬롬!</div>
     <div class="greet">
       <p>하나님의 평강이<br>가정에 가득하기를 기원합니다.</p>
@@ -332,7 +234,6 @@
       <p>벗과 이웃을 불러 모으고 말하되<br>나와 함께 즐기자<br>나의 잃은 양을 찾아내었노라</p>
       <cite>누가복음 15:6</cite>
     </div>
-
   </section>
 
   <!-- ========== 오시는 길 ========== -->
@@ -350,15 +251,15 @@
       <svg viewBox="0 0 400 300" role="img" aria-label="은천교회 약도: 신림역에서 남부순환로를 따라 봉천역 방향">
         <rect width="400" height="300" fill="var(--paper)"/>
         <!-- 블록 -->
-        <g fill="var(--ph)">
+        <g fill="#f7f2ea">
           <rect x="18" y="20" width="110" height="88" rx="4"/><rect x="146" y="20" width="236" height="88" rx="4"/>
           <rect x="18" y="168" width="110" height="112" rx="4"/><rect x="146" y="168" width="236" height="112" rx="4"/>
         </g>
         <!-- 남부순환로 -->
-        <rect x="0" y="118" width="400" height="40" fill="#ffe2cc"/>
+        <rect x="0" y="118" width="400" height="40" fill="#ece3d6"/>
         <line x1="0" y1="138" x2="400" y2="138" stroke="#fff" stroke-width="2" stroke-dasharray="10 8"/>
         <!-- 신림로 (세로) -->
-        <rect x="128" y="0" width="18" height="300" fill="#ffe2cc"/>
+        <rect x="128" y="0" width="18" height="300" fill="#ece3d6"/>
         <text x="200" y="152" font-size="11" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로</text>
         <text x="137" y="292" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">신림로</text>
         <!-- 지하철 2호선 -->
@@ -381,7 +282,7 @@
           <circle r="13" fill="var(--accent)"/>
           <path d="M0 -6 v12 M-5 -2 h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
         </g>
-        <rect x="216" y="172" width="92" height="40" rx="6" fill="var(--paper)" stroke="var(--accent)"/>
+        <rect x="216" y="172" width="92" height="40" rx="4" fill="var(--paper)" stroke="var(--accent)"/>
         <text x="262" y="189" font-size="13" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="Gowun Batang">은천교회</text>
         <text x="262" y="204" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로 1654</text>
       </svg>
@@ -391,6 +292,8 @@
       <a class="btn" href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EB%82%A8%EB%B6%80%EC%88%9C%ED%99%98%EB%A1%9C%201654" target="_blank" rel="noopener">카카오맵</a>
       <button class="btn" type="button" id="copyAddr">주소 복사</button>
     </div>
+    <div class="foot">Give thanks to the Lord, for He is good.</div>
+    <img class="logo" src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295">
   </section>
 </main>
 
