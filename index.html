@@ -51,14 +51,16 @@
   .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
   /* ----- 1페이지 ----- */
-  .p1 .title{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.45;text-wrap:balance;margin-top:12px}
-  .hero-art{aspect-ratio:4/5;width:100%;max-width:340px;margin:0 auto;border-radius:200px 200px 6px 6px;overflow:hidden;line-height:0}
+  /* 첫 화면 한 장에 제목 · 그림 · 일시 · 장소가 모두 보이도록 그림 위에 글자를 얹음 */
+  .p1{height:100svh;min-height:620px;max-height:940px;padding:0;gap:0;background:var(--il-bg);overflow:hidden}
+  .p1 .cover-top{position:relative;z-index:1;padding:clamp(44px,8svh,72px) 24px 0;margin-bottom:-28px}
+  .p1 .title{font-family:var(--serif);font-weight:700;font-size:31px;line-height:1.38;text-wrap:balance;margin-top:12px}
+  .hero-art{flex:1;min-height:0;width:100%;line-height:0}
   .hero-art svg{width:100%;height:100%;display:block}
-  .wheat{width:26px;height:26px;color:var(--olive);margin:0 auto 12px}
-  .church{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:.32em;margin-right:-.32em}
-  .info{display:grid;gap:10px;font-size:15px}
-  .info .when{font-family:var(--serif);font-weight:700;font-size:17px}
-  .info .where{color:var(--sub)}
+  .p1 .cover-bottom{position:relative;z-index:1;background:var(--il-table);padding:0 24px clamp(36px,6svh,56px);margin-top:-1px}
+  .info{display:grid;gap:6px;font-size:15px}
+  .info .when{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--accent)}
+  .info .where{font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:.06em}
   .p1 > *{animation:rise .9s ease both}
   .p1 > :nth-child(2){animation-delay:.1s}.p1 > :nth-child(3){animation-delay:.2s}.p1 > :nth-child(4){animation-delay:.3s}
   @keyframes rise{from{opacity:.001;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -88,6 +90,7 @@
   .addr{display:grid;gap:6px}
   .addr strong{font-family:var(--serif);font-weight:700;font-size:16px}
   .addr span{color:var(--sub);font-size:14px;user-select:text;-webkit-user-select:text}
+  .addr .how{font-size:13px;color:var(--ink);margin-top:2px}
   .roughmap{border:1px solid var(--line);border-radius:6px;overflow:hidden;line-height:0}
   .roughmap svg{width:100%;height:auto;display:block}
   .navs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -117,7 +120,7 @@
 
   <!-- ========== 1페이지 : 행사명 · 메인 이미지 · 일시 · 장소 ========== -->
   <section class="page p1">
-    <div>
+    <div class="cover-top">
       <div class="en">Thanksgiving Sunday</div>
       <h1 class="title">추수감사 가족초청예배</h1>
     </div>
@@ -273,18 +276,9 @@
 </svg>
     </div>
 
-    <div>
-      <svg class="wheat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
-        <path d="M12 22V8"/><path d="M12 8c-2-1-3-3-3-5 2 0 3 2 3 5z"/><path d="M12 8c2-1 3-3 3-5-2 0-3 2-3 5z"/>
-        <path d="M12 13c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 13c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
-        <path d="M12 18c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 18c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
-      </svg>
-      <div class="church">은천교회</div>
-    </div>
-
-    <div class="info">
+    <div class="cover-bottom info">
       <div class="when">2026년 10월 18일 주일 오전 11시</div>
-      <div class="where">은천교회 본당</div>
+      <div class="where">은천교회 5층 본당</div>
     </div>
 
   </section>
@@ -317,45 +311,64 @@
     <div class="addr">
       <strong>은천교회</strong>
       <span>서울 관악구 남부순환로 1654 · 02-872-2066</span>
+      <span class="how">지하철 2호선 신림역 1번 출구에서<br>봉천역 방향으로 약 300m · 도로변 건물 5층</span>
     </div>
     <div class="roughmap">
-      <svg viewBox="0 0 400 300" role="img" aria-label="은천교회 약도: 신림역에서 남부순환로를 따라 봉천역 방향">
+      <svg viewBox="0 0 400 268" role="img" aria-label="은천교회 약도: 지하철 2호선 신림역 1번 출구로 나와 남부순환로를 따라 봉천역 방향으로 같은 쪽 인도를 일직선으로 약 300m. 에이치플러스 양지병원을 지나 도로변, 강강술래 옆">
         <rect width="400" height="300" fill="var(--paper)"/>
         <!-- 블록 -->
-        <g fill="var(--ph)">
-          <rect x="18" y="20" width="110" height="88" rx="4"/><rect x="146" y="20" width="236" height="88" rx="4"/>
-          <rect x="18" y="168" width="110" height="112" rx="4"/><rect x="146" y="168" width="236" height="112" rx="4"/>
+        <g fill="#f1ebe2">
+          <rect x="54" y="12" width="128" height="112" rx="4"/><rect x="198" y="12" width="84" height="112" rx="4"/><rect x="298" y="12" width="102" height="112" rx="4"/>
+          <rect x="54" y="176" width="346" height="124" rx="4"/>
+        </g>
+        <!-- 골목: 남부순환로185길 · 191길 -->
+        <g fill="#e6dccd"><rect x="182" y="0" width="16" height="132"/><rect x="282" y="0" width="16" height="132"/></g>
+        <g font-family="Noto Sans KR" font-size="8" fill="var(--sub)" text-anchor="middle">
+          <text transform="translate(193 64) rotate(-90)">남부순환로185길</text>
+          <text transform="translate(293 64) rotate(-90)">남부순환로191길</text>
         </g>
         <!-- 남부순환로 -->
-        <rect x="0" y="118" width="400" height="40" fill="#e6dccd"/>
-        <line x1="0" y1="138" x2="400" y2="138" stroke="#fff" stroke-width="2" stroke-dasharray="10 8"/>
-        <!-- 신림로 (세로) -->
-        <rect x="128" y="0" width="18" height="300" fill="#e6dccd"/>
-        <text x="200" y="152" font-size="11" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로</text>
-        <text x="137" y="292" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">신림로</text>
-        <!-- 지하철 2호선 -->
-        <line x1="0" y1="128" x2="400" y2="128" stroke="#3cb44a" stroke-width="3" opacity=".55"/>
+        <rect x="0" y="132" width="400" height="36" fill="#e6dccd"/>
+        <line x1="0" y1="141" x2="400" y2="141" stroke="#3cb44a" stroke-width="2.5" opacity=".4"/>
+        <text x="132" y="160" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR" letter-spacing="1">남부순환로</text>
+        <text x="394" y="160" font-size="9" fill="var(--sub)" text-anchor="end" font-family="Noto Sans KR">봉천역 방향 →</text>
+        <!-- 신림선 -->
+        <rect x="36" y="0" width="8" height="300" fill="#6789ca" opacity=".55"/>
         <!-- 신림역 -->
-        <g>
-          <circle cx="137" cy="128" r="11" fill="#fff" stroke="#3cb44a" stroke-width="3"/>
-          <text x="137" y="132" font-size="10" font-weight="700" fill="#3cb44a" text-anchor="middle" font-family="Noto Sans KR">2</text>
-          <rect x="72" y="80" width="54" height="22" rx="11" fill="#3cb44a"/>
-          <text x="99" y="95" font-size="11" fill="#fff" text-anchor="middle" font-family="Noto Sans KR">신림역</text>
-        </g>
-        <!-- 봉천역 방향 -->
-        <text x="388" y="112" font-size="11" fill="var(--sub)" text-anchor="end" font-family="Noto Sans KR">봉천역 방향 →</text>
+        <circle cx="40" cy="150" r="11" fill="#fff" stroke="#3cb44a" stroke-width="3"/>
+        <text x="40" y="154" font-size="10" font-weight="700" fill="#3cb44a" text-anchor="middle" font-family="Noto Sans KR">2</text>
+        <rect x="56" y="98" width="54" height="22" rx="11" fill="#3cb44a"/>
+        <text x="83" y="113" font-size="11" font-weight="500" fill="#fff" text-anchor="middle" font-family="Noto Sans KR">신림역</text>
+        <!-- 1번 출구 -->
+        <circle cx="76" cy="184" r="9" fill="#f5c242" stroke="#fff" stroke-width="2"/>
+        <text x="76" y="188" font-size="10" font-weight="700" fill="#3b3029" text-anchor="middle" font-family="Noto Sans KR">1</text>
+        <text x="76" y="208" font-size="9" fill="var(--ink)" text-anchor="middle" font-family="Noto Sans KR">1번 출구</text>
         <!-- 경로 -->
-        <path d="M150 128 L248 128" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
-        <!-- 교회 -->
-        <g transform="translate(262 128)">
-          <circle r="26" fill="var(--accent)" opacity=".12"/>
-          <path d="M0 -40 v14 M-6 -34 h12" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
-          <circle r="13" fill="var(--accent)"/>
-          <path d="M0 -6 v12 M-5 -2 h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M88 176 H298" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5 4" stroke-linecap="round" fill="none"/>
+        <rect x="140" y="182" width="96" height="18" rx="9" fill="var(--paper)" stroke="var(--accent)" stroke-width="1"/>
+        <text x="188" y="195" font-size="9.5" font-weight="500" fill="var(--accent)" text-anchor="middle" font-family="Noto Sans KR">도보 약 300m · 5분</text>
+        <!-- 랜드마크 -->
+        <g font-family="Noto Sans KR" font-size="10" fill="var(--sub)" text-anchor="middle">
+          <g transform="translate(240 82)"><circle r="8" fill="#8a9bb0"/><path d="M-4 -2.5 h8 v5.5 h-8 z M-4 -2.5 l4 3 4 -3" stroke="#fff" stroke-width="1.1" fill="none" stroke-linejoin="round"/></g>
+          <text x="240" y="104">관악우체국</text>
+          <g transform="translate(188 228)"><circle r="8" fill="#d36b6b"/><path d="M0 -4.5 v9 M-4.5 0 h9" stroke="#fff" stroke-width="2.2"/></g>
+          <text x="188" y="250">에이치플러스 양지병원</text>
+          <g transform="translate(374 190)"><circle r="8" fill="#e0a25a"/><path d="M-2.2 -4.5 v9 M2.5 -4.5 v9 M-4 -4.5 v3 q1.8 2 3.6 0 v-3" stroke="#fff" stroke-width="1.1" fill="none" stroke-linecap="round"/></g>
+          <text x="374" y="212">강강술래</text>
         </g>
-        <rect x="216" y="172" width="92" height="40" rx="6" fill="var(--paper)" stroke="var(--accent)"/>
-        <text x="262" y="189" font-size="13" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="Gowun Batang">은천교회</text>
-        <text x="262" y="204" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로 1654</text>
+        <!-- 교회 (1번 출구와 같은 쪽 도로변) -->
+        <g transform="translate(312 182)">
+          <circle r="22" fill="var(--accent)" opacity=".14"/>
+          <circle r="12" fill="var(--accent)"/>
+          <path d="M0 -6 v12 M-4.5 -2 h9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <rect x="270" y="214" width="84" height="40" rx="6" fill="var(--paper)" stroke="var(--accent)"/>
+        <path d="M306 214 l6 -7 6 7" fill="var(--paper)" stroke="var(--accent)"/>
+        <path d="M307 214.5 h10" stroke="var(--paper)" stroke-width="2"/>
+        <text x="312" y="231" font-size="13" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="Gowun Batang">은천교회</text>
+        <text x="312" y="246" font-size="9" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로 1654</text>
+        <!-- 방위 -->
+        <g transform="translate(20 22)" font-family="Noto Sans KR" font-size="8" fill="var(--sub)" text-anchor="middle"><path d="M0 -10 l4 9 h-8 z" fill="var(--sub)"/><text y="9">N</text></g>
       </svg>
     </div>
     <div class="navs">
