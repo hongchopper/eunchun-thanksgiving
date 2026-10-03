@@ -76,13 +76,6 @@
   .greet .em{color:var(--accent);white-space:nowrap}
   .greet .from{margin-top:18px;font-size:14px;color:var(--sub);letter-spacing:.04em}
   .greet .from b{color:var(--ink);font-weight:700;font-size:16px;letter-spacing:.14em;margin-left:4px}
-  .verse{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:44px 22px 34px;margin-top:22px;position:relative;box-shadow:0 8px 24px rgba(120,90,50,.06)}
-  .verse::before{
-    content:"";position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
-    background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c09a5b' d='M10 7H6a2 2 0 0 0-2 2v4h4v4H6v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2zm10 0h-4a2 2 0 0 0-2 2v4h4v4h-2v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2z'/%3E%3C/svg%3E") center/16px no-repeat;
-  }
-  .verse p{font-family:var(--serif);font-size:15px;line-height:2.1;color:var(--ink)}
-  .verse cite{display:block;margin-top:14px;font-style:normal;font-size:12px;color:var(--gold);letter-spacing:.14em}
 
   /* ----- 오시는 길 ----- */
   .loc{gap:28px;padding-block:88px 80px;border-top:1px solid var(--line)}
@@ -107,6 +100,10 @@
   .foot{margin-top:32px;font-family:var(--latin);font-style:italic;font-size:15px;color:var(--sub)}
 
   .logo{display:block;width:150px;height:auto;margin:28px auto 0}
+  .home{display:grid;justify-items:center;gap:16px;text-decoration:none;color:var(--accent);font:400 13px var(--sans)}
+  .home span{padding:9px 20px;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+  .home:active span{background:var(--accent-soft)}
+  .home:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
 
   .toast{
     position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;
@@ -236,10 +233,6 @@
       <p>꼭 뵐 수 있기를 기도하며<br>기다리겠습니다.</p>
       <div class="from">은천교회 목사 <b>홍순설</b> 올림</div>
     </div>
-    <div class="verse">
-      <p>벗과 이웃을 불러 모으고 말하되<br>나와 함께 즐기자<br>나의 잃은 양을 찾아내었노라</p>
-      <cite>누가복음 15:6</cite>
-    </div>
   </section>
 
   <!-- ========== 오시는 길 ========== -->
@@ -318,7 +311,10 @@
       <button class="btn" type="button" id="copyAddr">주소 복사</button>
     </div>
     <div class="foot">Give thanks to the Lord, for He is good.</div>
-    <img class="logo" src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295">
+    <a class="home" href="https://www.eunchun.or.kr" target="_blank" rel="noopener">
+      <img class="logo" src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295">
+      <span>은천교회 홈페이지 바로가기 →</span>
+    </a>
   </section>
 </main>
 
