@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="2026년 10월 18일 주일 오전 11시, 은천교회 추수감사 가족초청예배에 초대합니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="추수감사 가족초청예배 · 은천교회">
+<meta property="og:description" content="10월 18일 주일 오전 11시, 기쁨과 감사의 예배에 당신을 초대합니다.">
+<meta property="og:image" content="https://hongchopper.github.io/eunchun-thanksgiving/og.png">
+<meta property="og:url" content="https://hongchopper.github.io/eunchun-thanksgiving/">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>추수감사 가족초청예배</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* 모바일 초대장: 위에서 아래로 이어지는 한 줄 스크롤 */
+  :root{
+    color-scheme:light;
+    --bg:#f7f2ea; --paper:#fffdf9; --ink:#3b3029; --sub:#7a6b5f; --line:#e3d8c9;
+    --accent:#9c4a2f; --accent-soft:#f1e2d6; --olive:#6f7350; --gold:#b8935a;
+    --ph:#efe8de; --ph-line:#c9bba8; --outer:#e9e1d5;
+    --il-bg:#f3e9dc; --il-halo:#e8cfa6; --il-1:#c8643f; --il-berry:#a8473a; --il-2:#d9a654; --il-3:#7d8456; --il-4:#6e4e6a; --il-basket:#b9875a; --il-basket-d:#8a5f3a; --il-table:#e9dccb; --il-bread:#d6a46a; --il-wheat:#c49a5a;
+    --serif:'Gowun Batang','Nanum Myeongjo',serif;
+    --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    --latin:'Cormorant Garamond',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--outer)}
+  body{background:var(--outer);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:430px;margin:0 auto;background:var(--bg);box-shadow:0 0 40px rgba(60,40,20,.08)}
+  .page{
+    display:flex;flex-direction:column;gap:40px;
+    padding:96px 28px;padding-block:96px;text-align:center;position:relative;
+  }
+  .page + .page{border-top:1px solid var(--line)}
+  .en{font-family:var(--latin);letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:var(--gold)}
+
+  /* ----- 이미지 자리 ----- */
+  .ph{
+    position:relative;width:100%;max-width:100%;
+    background:
+      linear-gradient(to top right,transparent calc(50% - .5px),var(--ph-line) 50%,transparent calc(50% + .5px)),
+      linear-gradient(to top left,transparent calc(50% - .5px),var(--ph-line) 50%,transparent calc(50% + .5px)),
+      var(--ph);
+    border:1.5px dashed var(--ph-line);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .ph span{background:var(--paper);color:var(--sub);font-size:12px;line-height:1.5;padding:6px 12px;border-radius:20px;border:1px solid var(--line)}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* ----- 1페이지 ----- */
+  .p1 .title{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.45;text-wrap:balance;margin-top:12px}
+  .hero-art{aspect-ratio:4/5;width:100%;max-width:340px;margin:0 auto;border-radius:200px 200px 6px 6px;overflow:hidden;line-height:0}
+  .hero-art svg{width:100%;height:100%;display:block}
+  .wheat{width:26px;height:26px;color:var(--olive);margin:0 auto 12px}
+  .church{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:.32em;margin-right:-.32em}
+  .info{display:grid;gap:10px;font-size:15px}
+  .info .when{font-family:var(--serif);font-weight:700;font-size:17px}
+  .info .where{color:var(--sub)}
+  .p1 > *{animation:rise .9s ease both}
+  .p1 > :nth-child(2){animation-delay:.1s}.p1 > :nth-child(3){animation-delay:.2s}.p1 > :nth-child(4){animation-delay:.3s}
+  @keyframes rise{from{opacity:.001;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.p1 > *{animation:none}}
+
+  /* ----- 2페이지 ----- */
+  .p2{gap:36px}
+  .loc{gap:28px;padding-block:96px 80px}
+  .loc .head{display:grid;gap:10px}
+  .loc h2{font-family:var(--serif);font-weight:700;font-size:20px}
+  .loc .navs{margin-top:-14px;margin-bottom:24px}
+  .loc .sign{margin-top:36px}
+  .shalom{font-family:var(--serif);font-size:21px;color:var(--accent)}
+  .greet{font-family:var(--serif);font-size:16px;line-height:2.05;display:grid;gap:22px}
+  .greet .em{color:var(--accent);white-space:nowrap}
+  .greet .from{margin-top:14px;font-size:15px;color:var(--sub);letter-spacing:.04em}
+  .greet .from b{color:var(--ink);font-weight:700;letter-spacing:.12em}
+  .verse{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:40px 22px 32px;margin-top:20px;position:relative}
+  .verse::before{
+    content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:44px;height:26px;
+    background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b8935a' d='M10 7H6a2 2 0 0 0-2 2v4h4v4H6v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2zm10 0h-4a2 2 0 0 0-2 2v4h4v4h-2v2h2a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2z'/%3E%3C/svg%3E") center/20px no-repeat;
+  }
+  .verse p{font-family:var(--serif);font-size:15px;line-height:2.1}
+  .verse cite{display:block;margin-top:16px;font-style:normal;font-size:13px;color:var(--accent);letter-spacing:.08em}
+  .divider{display:flex;align-items:center;gap:12px;color:var(--gold)}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  .addr{display:grid;gap:6px}
+  .addr strong{font-family:var(--serif);font-weight:700;font-size:16px}
+  .addr span{color:var(--sub);font-size:14px;user-select:text;-webkit-user-select:text}
+  .roughmap{border:1px solid var(--line);border-radius:6px;overflow:hidden;line-height:0}
+  .roughmap svg{width:100%;height:auto;display:block}
+  .navs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:11px 6px;border-radius:6px;border:1px solid var(--line);
+    background:var(--paper);color:var(--ink);font:400 13px var(--sans);text-decoration:none;cursor:pointer;
+  }
+  .btn:active{background:var(--accent-soft)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .sign{font-family:var(--serif);font-size:13px;color:var(--sub);letter-spacing:.2em}
+
+  .toast{
+    position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;
+    background:var(--ink);color:var(--paper);font-size:13px;padding:10px 18px;border-radius:20px;
+    transition:all .3s;pointer-events:none;z-index:10;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+
+<main class="wrap">
+
+  <!-- ========== 1페이지 : 행사명 · 메인 이미지 · 일시 · 장소 ========== -->
+  <section class="page p1">
+    <div>
+      <div class="en">Thanksgiving Sunday</div>
+      <h1 class="title">추수감사 가족초청예배</h1>
+    </div>
+
+    <div class="hero-art">
+<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMid slice">
+<rect width="320" height="400" fill="var(--il-bg)"/>
+<circle cx="160" cy="150" r="96" fill="var(--il-halo)" opacity=".45"/>
+<circle cx="160" cy="150" r="62" fill="var(--il-halo)" opacity=".55"/>
+<path d="M133.0 300 Q84.5 214.0 52 128" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="47.5" cy="130.1" rx="7" ry="3.6" transform="rotate(-143.2 47.5 130.1)" fill="var(--il-wheat)"/>
+<ellipse cx="56.5" cy="125.9" rx="7" ry="3.6" transform="rotate(-87.2 56.5 125.9)" fill="var(--il-wheat)"/>
+<ellipse cx="52.2" cy="140.1" rx="7" ry="3.6" transform="rotate(-143.2 52.2 140.1)" fill="var(--il-wheat)"/>
+<ellipse cx="61.2" cy="135.8" rx="7" ry="3.6" transform="rotate(-87.2 61.2 135.8)" fill="var(--il-wheat)"/>
+<ellipse cx="56.8" cy="150.0" rx="7" ry="3.6" transform="rotate(-143.2 56.8 150.0)" fill="var(--il-wheat)"/>
+<ellipse cx="65.9" cy="145.8" rx="7" ry="3.6" transform="rotate(-87.2 65.9 145.8)" fill="var(--il-wheat)"/>
+<ellipse cx="61.5" cy="160.0" rx="7" ry="3.6" transform="rotate(-143.2 61.5 160.0)" fill="var(--il-wheat)"/>
+<ellipse cx="70.6" cy="155.7" rx="7" ry="3.6" transform="rotate(-87.2 70.6 155.7)" fill="var(--il-wheat)"/>
+<ellipse cx="66.2" cy="169.9" rx="7" ry="3.6" transform="rotate(-143.2 66.2 169.9)" fill="var(--il-wheat)"/>
+<ellipse cx="75.3" cy="165.7" rx="7" ry="3.6" transform="rotate(-87.2 75.3 165.7)" fill="var(--il-wheat)"/>
+<ellipse cx="70.9" cy="179.9" rx="7" ry="3.6" transform="rotate(-143.2 70.9 179.9)" fill="var(--il-wheat)"/>
+<ellipse cx="80.0" cy="175.6" rx="7" ry="3.6" transform="rotate(-87.2 80.0 175.6)" fill="var(--il-wheat)"/>
+<ellipse cx="49.4" cy="122.6" rx="6" ry="3.4" transform="rotate(-115.2 49.4 122.6)" fill="var(--il-wheat)"/>
+<path d="M141.0 300 Q104.5 198.0 84 96" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="79.2" cy="97.3" rx="7" ry="3.6" transform="rotate(-133.6 79.2 97.3)" fill="var(--il-wheat)"/>
+<ellipse cx="88.8" cy="94.7" rx="7" ry="3.6" transform="rotate(-77.6 88.8 94.7)" fill="var(--il-wheat)"/>
+<ellipse cx="82.1" cy="107.9" rx="7" ry="3.6" transform="rotate(-133.6 82.1 107.9)" fill="var(--il-wheat)"/>
+<ellipse cx="91.8" cy="105.2" rx="7" ry="3.6" transform="rotate(-77.6 91.8 105.2)" fill="var(--il-wheat)"/>
+<ellipse cx="85.1" cy="118.5" rx="7" ry="3.6" transform="rotate(-133.6 85.1 118.5)" fill="var(--il-wheat)"/>
+<ellipse cx="94.7" cy="115.8" rx="7" ry="3.6" transform="rotate(-77.6 94.7 115.8)" fill="var(--il-wheat)"/>
+<ellipse cx="88.1" cy="129.1" rx="7" ry="3.6" transform="rotate(-133.6 88.1 129.1)" fill="var(--il-wheat)"/>
+<ellipse cx="97.7" cy="126.4" rx="7" ry="3.6" transform="rotate(-77.6 97.7 126.4)" fill="var(--il-wheat)"/>
+<ellipse cx="91.0" cy="139.7" rx="7" ry="3.6" transform="rotate(-133.6 91.0 139.7)" fill="var(--il-wheat)"/>
+<ellipse cx="100.7" cy="137.0" rx="7" ry="3.6" transform="rotate(-77.6 100.7 137.0)" fill="var(--il-wheat)"/>
+<ellipse cx="94.0" cy="150.3" rx="7" ry="3.6" transform="rotate(-133.6 94.0 150.3)" fill="var(--il-wheat)"/>
+<ellipse cx="103.6" cy="147.6" rx="7" ry="3.6" transform="rotate(-77.6 103.6 147.6)" fill="var(--il-wheat)"/>
+<ellipse cx="82.4" cy="90.2" rx="6" ry="3.4" transform="rotate(-105.6 82.4 90.2)" fill="var(--il-wheat)"/>
+<path d="M149.5 300 Q125.75 189.0 118 78" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="113.0" cy="78.7" rx="7" ry="3.6" transform="rotate(-126.1 113.0 78.7)" fill="var(--il-wheat)"/>
+<ellipse cx="123.0" cy="77.3" rx="7" ry="3.6" transform="rotate(-70.1 123.0 77.3)" fill="var(--il-wheat)"/>
+<ellipse cx="114.6" cy="89.6" rx="7" ry="3.6" transform="rotate(-126.1 114.6 89.6)" fill="var(--il-wheat)"/>
+<ellipse cx="124.5" cy="88.2" rx="7" ry="3.6" transform="rotate(-70.1 124.5 88.2)" fill="var(--il-wheat)"/>
+<ellipse cx="116.1" cy="100.5" rx="7" ry="3.6" transform="rotate(-126.1 116.1 100.5)" fill="var(--il-wheat)"/>
+<ellipse cx="126.0" cy="99.1" rx="7" ry="3.6" transform="rotate(-70.1 126.0 99.1)" fill="var(--il-wheat)"/>
+<ellipse cx="117.7" cy="111.4" rx="7" ry="3.6" transform="rotate(-126.1 117.7 111.4)" fill="var(--il-wheat)"/>
+<ellipse cx="127.6" cy="110.0" rx="7" ry="3.6" transform="rotate(-70.1 127.6 110.0)" fill="var(--il-wheat)"/>
+<ellipse cx="119.2" cy="122.3" rx="7" ry="3.6" transform="rotate(-126.1 119.2 122.3)" fill="var(--il-wheat)"/>
+<ellipse cx="129.1" cy="120.9" rx="7" ry="3.6" transform="rotate(-70.1 129.1 120.9)" fill="var(--il-wheat)"/>
+<ellipse cx="120.8" cy="133.2" rx="7" ry="3.6" transform="rotate(-126.1 120.8 133.2)" fill="var(--il-wheat)"/>
+<ellipse cx="130.7" cy="131.8" rx="7" ry="3.6" transform="rotate(-70.1 130.7 131.8)" fill="var(--il-wheat)"/>
+<ellipse cx="117.2" cy="72.1" rx="6" ry="3.4" transform="rotate(-98.1 117.2 72.1)" fill="var(--il-wheat)"/>
+<path d="M170.5 300 Q194.25 189.0 202 78" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="197.0" cy="77.3" rx="7" ry="3.6" transform="rotate(-109.9 197.0 77.3)" fill="var(--il-wheat)"/>
+<ellipse cx="207.0" cy="78.7" rx="7" ry="3.6" transform="rotate(-53.9 207.0 78.7)" fill="var(--il-wheat)"/>
+<ellipse cx="195.5" cy="88.2" rx="7" ry="3.6" transform="rotate(-109.9 195.5 88.2)" fill="var(--il-wheat)"/>
+<ellipse cx="205.4" cy="89.6" rx="7" ry="3.6" transform="rotate(-53.9 205.4 89.6)" fill="var(--il-wheat)"/>
+<ellipse cx="194.0" cy="99.1" rx="7" ry="3.6" transform="rotate(-109.9 194.0 99.1)" fill="var(--il-wheat)"/>
+<ellipse cx="203.9" cy="100.5" rx="7" ry="3.6" transform="rotate(-53.9 203.9 100.5)" fill="var(--il-wheat)"/>
+<ellipse cx="192.4" cy="110.0" rx="7" ry="3.6" transform="rotate(-109.9 192.4 110.0)" fill="var(--il-wheat)"/>
+<ellipse cx="202.3" cy="111.4" rx="7" ry="3.6" transform="rotate(-53.9 202.3 111.4)" fill="var(--il-wheat)"/>
+<ellipse cx="190.9" cy="120.9" rx="7" ry="3.6" transform="rotate(-109.9 190.9 120.9)" fill="var(--il-wheat)"/>
+<ellipse cx="200.8" cy="122.3" rx="7" ry="3.6" transform="rotate(-53.9 200.8 122.3)" fill="var(--il-wheat)"/>
+<ellipse cx="189.3" cy="131.8" rx="7" ry="3.6" transform="rotate(-109.9 189.3 131.8)" fill="var(--il-wheat)"/>
+<ellipse cx="199.2" cy="133.2" rx="7" ry="3.6" transform="rotate(-53.9 199.2 133.2)" fill="var(--il-wheat)"/>
+<ellipse cx="202.8" cy="72.1" rx="6" ry="3.4" transform="rotate(-81.9 202.8 72.1)" fill="var(--il-wheat)"/>
+<path d="M179.0 300 Q215.5 198.0 236 96" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="231.2" cy="94.7" rx="7" ry="3.6" transform="rotate(-102.4 231.2 94.7)" fill="var(--il-wheat)"/>
+<ellipse cx="240.8" cy="97.3" rx="7" ry="3.6" transform="rotate(-46.4 240.8 97.3)" fill="var(--il-wheat)"/>
+<ellipse cx="228.2" cy="105.2" rx="7" ry="3.6" transform="rotate(-102.4 228.2 105.2)" fill="var(--il-wheat)"/>
+<ellipse cx="237.9" cy="107.9" rx="7" ry="3.6" transform="rotate(-46.4 237.9 107.9)" fill="var(--il-wheat)"/>
+<ellipse cx="225.3" cy="115.8" rx="7" ry="3.6" transform="rotate(-102.4 225.3 115.8)" fill="var(--il-wheat)"/>
+<ellipse cx="234.9" cy="118.5" rx="7" ry="3.6" transform="rotate(-46.4 234.9 118.5)" fill="var(--il-wheat)"/>
+<ellipse cx="222.3" cy="126.4" rx="7" ry="3.6" transform="rotate(-102.4 222.3 126.4)" fill="var(--il-wheat)"/>
+<ellipse cx="231.9" cy="129.1" rx="7" ry="3.6" transform="rotate(-46.4 231.9 129.1)" fill="var(--il-wheat)"/>
+<ellipse cx="219.3" cy="137.0" rx="7" ry="3.6" transform="rotate(-102.4 219.3 137.0)" fill="var(--il-wheat)"/>
+<ellipse cx="229.0" cy="139.7" rx="7" ry="3.6" transform="rotate(-46.4 229.0 139.7)" fill="var(--il-wheat)"/>
+<ellipse cx="216.4" cy="147.6" rx="7" ry="3.6" transform="rotate(-102.4 216.4 147.6)" fill="var(--il-wheat)"/>
+<ellipse cx="226.0" cy="150.3" rx="7" ry="3.6" transform="rotate(-46.4 226.0 150.3)" fill="var(--il-wheat)"/>
+<ellipse cx="237.6" cy="90.2" rx="6" ry="3.4" transform="rotate(-74.4 237.6 90.2)" fill="var(--il-wheat)"/>
+<path d="M187.0 300 Q235.5 214.0 268 128" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="263.5" cy="125.9" rx="7" ry="3.6" transform="rotate(-92.8 263.5 125.9)" fill="var(--il-wheat)"/>
+<ellipse cx="272.5" cy="130.1" rx="7" ry="3.6" transform="rotate(-36.8 272.5 130.1)" fill="var(--il-wheat)"/>
+<ellipse cx="258.8" cy="135.8" rx="7" ry="3.6" transform="rotate(-92.8 258.8 135.8)" fill="var(--il-wheat)"/>
+<ellipse cx="267.8" cy="140.1" rx="7" ry="3.6" transform="rotate(-36.8 267.8 140.1)" fill="var(--il-wheat)"/>
+<ellipse cx="254.1" cy="145.8" rx="7" ry="3.6" transform="rotate(-92.8 254.1 145.8)" fill="var(--il-wheat)"/>
+<ellipse cx="263.2" cy="150.0" rx="7" ry="3.6" transform="rotate(-36.8 263.2 150.0)" fill="var(--il-wheat)"/>
+<ellipse cx="249.4" cy="155.7" rx="7" ry="3.6" transform="rotate(-92.8 249.4 155.7)" fill="var(--il-wheat)"/>
+<ellipse cx="258.5" cy="160.0" rx="7" ry="3.6" transform="rotate(-36.8 258.5 160.0)" fill="var(--il-wheat)"/>
+<ellipse cx="244.7" cy="165.7" rx="7" ry="3.6" transform="rotate(-92.8 244.7 165.7)" fill="var(--il-wheat)"/>
+<ellipse cx="253.8" cy="169.9" rx="7" ry="3.6" transform="rotate(-36.8 253.8 169.9)" fill="var(--il-wheat)"/>
+<ellipse cx="240.0" cy="175.6" rx="7" ry="3.6" transform="rotate(-92.8 240.0 175.6)" fill="var(--il-wheat)"/>
+<ellipse cx="249.1" cy="179.9" rx="7" ry="3.6" transform="rotate(-36.8 249.1 179.9)" fill="var(--il-wheat)"/>
+<ellipse cx="270.6" cy="122.6" rx="6" ry="3.4" transform="rotate(-64.8 270.6 122.6)" fill="var(--il-wheat)"/>
+<path d="M127.5 300 Q70.75 235.0 30 170" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="26.0" cy="173.0" rx="7" ry="3.6" transform="rotate(-154.9 26.0 173.0)" fill="var(--il-wheat)"/>
+<ellipse cx="34.0" cy="167.0" rx="7" ry="3.6" transform="rotate(-98.9 34.0 167.0)" fill="var(--il-wheat)"/>
+<ellipse cx="32.6" cy="181.8" rx="7" ry="3.6" transform="rotate(-154.9 32.6 181.8)" fill="var(--il-wheat)"/>
+<ellipse cx="40.6" cy="175.8" rx="7" ry="3.6" transform="rotate(-98.9 40.6 175.8)" fill="var(--il-wheat)"/>
+<ellipse cx="39.2" cy="190.6" rx="7" ry="3.6" transform="rotate(-154.9 39.2 190.6)" fill="var(--il-wheat)"/>
+<ellipse cx="47.2" cy="184.6" rx="7" ry="3.6" transform="rotate(-98.9 47.2 184.6)" fill="var(--il-wheat)"/>
+<ellipse cx="45.8" cy="199.4" rx="7" ry="3.6" transform="rotate(-154.9 45.8 199.4)" fill="var(--il-wheat)"/>
+<ellipse cx="53.8" cy="193.4" rx="7" ry="3.6" transform="rotate(-98.9 53.8 193.4)" fill="var(--il-wheat)"/>
+<ellipse cx="52.4" cy="208.2" rx="7" ry="3.6" transform="rotate(-154.9 52.4 208.2)" fill="var(--il-wheat)"/>
+<ellipse cx="60.4" cy="202.2" rx="7" ry="3.6" transform="rotate(-98.9 60.4 202.2)" fill="var(--il-wheat)"/>
+<ellipse cx="59.0" cy="217.0" rx="7" ry="3.6" transform="rotate(-154.9 59.0 217.0)" fill="var(--il-wheat)"/>
+<ellipse cx="67.0" cy="211.0" rx="7" ry="3.6" transform="rotate(-98.9 67.0 211.0)" fill="var(--il-wheat)"/>
+<ellipse cx="26.4" cy="165.2" rx="6" ry="3.4" transform="rotate(-126.9 26.4 165.2)" fill="var(--il-wheat)"/>
+<path d="M192.5 300 Q249.25 235.0 290 170" stroke="var(--il-wheat)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<ellipse cx="286.0" cy="167.0" rx="7" ry="3.6" transform="rotate(-81.1 286.0 167.0)" fill="var(--il-wheat)"/>
+<ellipse cx="294.0" cy="173.0" rx="7" ry="3.6" transform="rotate(-25.1 294.0 173.0)" fill="var(--il-wheat)"/>
+<ellipse cx="279.4" cy="175.8" rx="7" ry="3.6" transform="rotate(-81.1 279.4 175.8)" fill="var(--il-wheat)"/>
+<ellipse cx="287.4" cy="181.8" rx="7" ry="3.6" transform="rotate(-25.1 287.4 181.8)" fill="var(--il-wheat)"/>
+<ellipse cx="272.8" cy="184.6" rx="7" ry="3.6" transform="rotate(-81.1 272.8 184.6)" fill="var(--il-wheat)"/>
+<ellipse cx="280.8" cy="190.6" rx="7" ry="3.6" transform="rotate(-25.1 280.8 190.6)" fill="var(--il-wheat)"/>
+<ellipse cx="266.2" cy="193.4" rx="7" ry="3.6" transform="rotate(-81.1 266.2 193.4)" fill="var(--il-wheat)"/>
+<ellipse cx="274.2" cy="199.4" rx="7" ry="3.6" transform="rotate(-25.1 274.2 199.4)" fill="var(--il-wheat)"/>
+<ellipse cx="259.6" cy="202.2" rx="7" ry="3.6" transform="rotate(-81.1 259.6 202.2)" fill="var(--il-wheat)"/>
+<ellipse cx="267.6" cy="208.2" rx="7" ry="3.6" transform="rotate(-25.1 267.6 208.2)" fill="var(--il-wheat)"/>
+<ellipse cx="253.0" cy="211.0" rx="7" ry="3.6" transform="rotate(-81.1 253.0 211.0)" fill="var(--il-wheat)"/>
+<ellipse cx="261.0" cy="217.0" rx="7" ry="3.6" transform="rotate(-25.1 261.0 217.0)" fill="var(--il-wheat)"/>
+<ellipse cx="293.6" cy="165.2" rx="6" ry="3.4" transform="rotate(-53.1 293.6 165.2)" fill="var(--il-wheat)"/>
+<rect x="0" y="336" width="320" height="64" fill="var(--il-table)"/>
+<path d="M0 336 H320" stroke="var(--il-basket-d)" stroke-width="1.5" opacity=".35"/>
+<g fill="none" stroke="var(--il-basket-d)" stroke-width="1" opacity=".25"><path d="M0 356 H320"/><path d="M0 376 H320"/></g>
+<ellipse cx="78" cy="214" rx="20" ry="9" transform="rotate(-35 78 214)" fill="var(--il-3)"/>
+<ellipse cx="242" cy="206" rx="20" ry="9" transform="rotate(30 242 206)" fill="var(--il-3)"/>
+<ellipse cx="176" cy="190" rx="20" ry="9" transform="rotate(10 176 190)" fill="var(--il-3)"/>
+<circle cx="96" cy="214" r="9" fill="var(--il-4)"/>
+<circle cx="112" cy="210" r="9" fill="var(--il-4)"/>
+<circle cx="88" cy="228" r="9" fill="var(--il-4)"/>
+<circle cx="104" cy="226" r="9" fill="var(--il-4)"/>
+<circle cx="120" cy="224" r="9" fill="var(--il-4)"/>
+<circle cx="96" cy="242" r="9" fill="var(--il-4)"/>
+<circle cx="112" cy="240" r="9" fill="var(--il-4)"/>
+<circle cx="104" cy="254" r="9" fill="var(--il-4)"/>
+<path d="M106 202 q2 -10 10 -14" stroke="var(--il-3)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<circle cx="236" cy="236" r="24" fill="var(--il-berry)"/><path d="M236 214 q1 -9 6 -12" stroke="var(--il-basket-d)" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="228" cy="228" rx="5" ry="8" fill="#fff" opacity=".25"/>
+<ellipse cx="150" cy="224" rx="34" ry="27" fill="var(--il-1)"/>
+<g fill="var(--il-3)" transform="translate(150 193)"><path d="M0 0 L-12 -3 L-4 4 Z"/><path d="M0 0 L12 -3 L4 4 Z"/><path d="M0 0 L-6 -10 L2 -2 Z"/><path d="M0 0 L7 -9 L-1 -2 Z"/></g>
+<ellipse cx="139" cy="216" rx="6" ry="10" fill="#fff" opacity=".22"/>
+<ellipse cx="198" cy="236" rx="28" ry="22" fill="var(--il-1)"/>
+<g fill="var(--il-3)" transform="translate(198 211)"><path d="M0 0 L-12 -3 L-4 4 Z"/><path d="M0 0 L12 -3 L4 4 Z"/><path d="M0 0 L-6 -10 L2 -2 Z"/><path d="M0 0 L7 -9 L-1 -2 Z"/></g>
+<ellipse cx="189" cy="229" rx="5" ry="8" fill="#fff" opacity=".22"/>
+<path d="M70 252 L250 252 L230 338 L90 338 Z" fill="var(--il-basket)"/>
+<g stroke="var(--il-basket-d)" stroke-width="2" fill="none" opacity=".6"><path d="M75 274 H245"/><path d="M80 296 H240"/><path d="M85 318 H235"/><path d="M96 254 L104 336"/><path d="M118 254 L123 336"/><path d="M140 254 L142 336"/><path d="M162 254 L162 336"/><path d="M184 254 L181 336"/><path d="M206 254 L200 336"/><path d="M228 254 L220 336"/></g>
+<rect x="60" y="242" width="200" height="18" rx="9" fill="var(--il-basket-d)"/>
+<g transform="translate(46 344)"><ellipse cx="-14" cy="0" rx="16" ry="20" fill="var(--il-2)"/><ellipse cx="14" cy="0" rx="16" ry="20" fill="var(--il-2)"/><ellipse cx="0" cy="0" rx="16" ry="21" fill="var(--il-2)" stroke="var(--il-basket-d)" stroke-opacity=".25" stroke-width="1.5"/><path d="M0 -20 q2 -8 8 -11" stroke="var(--il-3)" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(272 350)"><ellipse cx="0" cy="0" rx="36" ry="19" fill="var(--il-bread)"/><g stroke="var(--il-basket-d)" stroke-width="2.4" stroke-linecap="round" opacity=".55"><path d="M-18 -10 l8 12"/><path d="M-3 -13 l8 13"/><path d="M12 -11 l8 12"/></g></g>
+<path d="M60 54 L61.6 58.4 L66 60 L61.6 61.6 L60 66 L58.4 61.6 L54 60 L58.4 58.4 Z" fill="var(--il-2)" opacity=".8"/>
+<path d="M262 46 L263.6 50.4 L268 52 L263.6 53.6 L262 58 L260.4 53.6 L256 52 L260.4 50.4 Z" fill="var(--il-2)" opacity=".8"/>
+<path d="M40 244 L41.6 248.4 L46 250 L41.6 251.6 L40 256 L38.4 251.6 L34 250 L38.4 248.4 Z" fill="var(--il-2)" opacity=".8"/>
+<path d="M286 256 L287.6 260.4 L292 262 L287.6 263.6 L286 268 L284.4 263.6 L280 262 L284.4 260.4 Z" fill="var(--il-2)" opacity=".8"/>
+</svg>
+    </div>
+
+    <div>
+      <svg class="wheat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+        <path d="M12 22V8"/><path d="M12 8c-2-1-3-3-3-5 2 0 3 2 3 5z"/><path d="M12 8c2-1 3-3 3-5-2 0-3 2-3 5z"/>
+        <path d="M12 13c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 13c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
+        <path d="M12 18c-2.5-.5-4-2.5-4-4.5 2.5.3 4 2 4 4.5z"/><path d="M12 18c2.5-.5 4-2.5 4-4.5-2.5.3-4 2-4 4.5z"/>
+      </svg>
+      <div class="church">은천교회</div>
+    </div>
+
+    <div class="info">
+      <div class="when">2026년 10월 18일 주일 오전 11시</div>
+      <div class="where">은천교회 본당</div>
+    </div>
+
+  </section>
+
+  <!-- ========== 2페이지 : 초대의 글 · 주소 · 약도 ========== -->
+  <section class="page p2">
+    <div class="shalom">샬롬!</div>
+    <div class="greet">
+      <p>하나님의 평강이<br>가정에 가득하기를 기원합니다.</p>
+      <p>한 해의 결실을 거두는<br>추수감사절이 다가옵니다.</p>
+      <p>당신을 기쁨과 감사의<br>추수감사예배<span class="em">(10월 18일 오전 11시)</span>에<br>초대합니다.</p>
+      <p>당신의 참석이 하나님께는 영광,<br>저희 은천교회 교우들에게는<br>큰 기쁨이 될 것입니다.</p>
+      <p>꼭 뵐 수 있기를 기도하며<br>기다리겠습니다.</p>
+      <div class="from">은천교회 목사 <b>홍순설</b> 올림</div>
+    </div>
+    <div class="verse">
+      <p>벗과 이웃을 불러 모으고 말하되<br>나와 함께 즐기자<br>나의 잃은 양을 찾아내었노라</p>
+      <cite>누가복음 15:6</cite>
+    </div>
+
+  </section>
+
+  <!-- ========== 오시는 길 ========== -->
+  <section class="page loc">
+    <div class="head">
+      <div class="en">Location</div>
+      <h2>오시는 길</h2>
+    </div>
+
+    <div class="addr">
+      <strong>은천교회</strong>
+      <span>서울 관악구 남부순환로 1654 · 02-872-2066</span>
+    </div>
+    <div class="roughmap">
+      <svg viewBox="0 0 400 300" role="img" aria-label="은천교회 약도: 신림역에서 남부순환로를 따라 봉천역 방향">
+        <rect width="400" height="300" fill="var(--paper)"/>
+        <!-- 블록 -->
+        <g fill="var(--ph)">
+          <rect x="18" y="20" width="110" height="88" rx="4"/><rect x="146" y="20" width="236" height="88" rx="4"/>
+          <rect x="18" y="168" width="110" height="112" rx="4"/><rect x="146" y="168" width="236" height="112" rx="4"/>
+        </g>
+        <!-- 남부순환로 -->
+        <rect x="0" y="118" width="400" height="40" fill="#e6dccd"/>
+        <line x1="0" y1="138" x2="400" y2="138" stroke="#fff" stroke-width="2" stroke-dasharray="10 8"/>
+        <!-- 신림로 (세로) -->
+        <rect x="128" y="0" width="18" height="300" fill="#e6dccd"/>
+        <text x="200" y="152" font-size="11" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로</text>
+        <text x="137" y="292" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">신림로</text>
+        <!-- 지하철 2호선 -->
+        <line x1="0" y1="128" x2="400" y2="128" stroke="#3cb44a" stroke-width="3" opacity=".55"/>
+        <!-- 신림역 -->
+        <g>
+          <circle cx="137" cy="128" r="11" fill="#fff" stroke="#3cb44a" stroke-width="3"/>
+          <text x="137" y="132" font-size="10" font-weight="700" fill="#3cb44a" text-anchor="middle" font-family="Noto Sans KR">2</text>
+          <rect x="72" y="80" width="54" height="22" rx="11" fill="#3cb44a"/>
+          <text x="99" y="95" font-size="11" fill="#fff" text-anchor="middle" font-family="Noto Sans KR">신림역</text>
+        </g>
+        <!-- 봉천역 방향 -->
+        <text x="388" y="112" font-size="11" fill="var(--sub)" text-anchor="end" font-family="Noto Sans KR">봉천역 방향 →</text>
+        <!-- 경로 -->
+        <path d="M150 128 L248 128" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+        <!-- 교회 -->
+        <g transform="translate(262 128)">
+          <circle r="26" fill="var(--accent)" opacity=".12"/>
+          <path d="M0 -40 v14 M-6 -34 h12" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle r="13" fill="var(--accent)"/>
+          <path d="M0 -6 v12 M-5 -2 h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <rect x="216" y="172" width="92" height="40" rx="6" fill="var(--paper)" stroke="var(--accent)"/>
+        <text x="262" y="189" font-size="13" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="Gowun Batang">은천교회</text>
+        <text x="262" y="204" font-size="10" fill="var(--sub)" text-anchor="middle" font-family="Noto Sans KR">남부순환로 1654</text>
+      </svg>
+    </div>
+    <div class="navs">
+      <a class="btn" href="https://map.naver.com/p/search/%EC%9D%80%EC%B2%9C%EA%B5%90%ED%9A%8C%20%EB%82%A8%EB%B6%80%EC%88%9C%ED%99%98%EB%A1%9C%201654" target="_blank" rel="noopener">네이버지도</a>
+      <a class="btn" href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EB%82%A8%EB%B6%80%EC%88%9C%ED%99%98%EB%A1%9C%201654" target="_blank" rel="noopener">카카오맵</a>
+      <button class="btn" type="button" id="copyAddr">주소 복사</button>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+  function toast(msg){
+    var t=document.getElementById('toast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show')},1800);
+  }
+  document.getElementById('copyAddr').addEventListener('click',function(){
+    var text='서울 관악구 남부순환로 1654';
+    try{
+      navigator.clipboard.writeText(text).then(function(){toast('주소가 복사되었습니다')},function(){toast('주소를 길게 눌러 복사해 주세요')});
+    }catch(e){toast('주소를 길게 눌러 복사해 주세요')}
+  });
+</script>
+
+</body>
+</html>
