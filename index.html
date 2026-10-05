@@ -52,11 +52,13 @@
 
   /* ----- 1페이지 ----- */
   /* 첫 화면 한 장: 글자는 위에 모으고, 그림은 아래에 깔아 여백을 둠 */
-  .p1{min-height:min(100svh,940px);padding:0;gap:0;background:var(--il-bg);overflow:hidden}
+  .p1{height:100svh;min-height:600px;max-height:940px;padding:0;gap:0;background:var(--il-bg);overflow:hidden}
   .p1 .cover-top{padding:clamp(40px,7svh,84px) 24px 0}
   .p1 .title{font-family:var(--serif);font-weight:700;font-size:31px;line-height:1.38;text-wrap:balance;margin-top:12px}
-  .hero-art{flex:1 0 auto;min-height:min(96vw,410px);width:100%;line-height:0;margin-top:-24px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 32%);mask-image:linear-gradient(to bottom,transparent,#000 32%)}
-  .p1 .cover-logo{position:absolute;left:0;right:0;bottom:clamp(22px,4svh,40px);margin:0 auto;width:118px;height:auto;z-index:3;filter:drop-shadow(0 0 8px rgba(255,255,255,.9))}
+  .hero-art{flex:1 1 auto;min-height:0;background:linear-gradient(rgba(138,95,58,.25),rgba(138,95,58,.25)) 0 89%/100% 1px no-repeat,linear-gradient(rgba(138,95,58,.25),rgba(138,95,58,.25)) 0 94%/100% 1px no-repeat,linear-gradient(to bottom,var(--il-bg) calc(84% - 1px),rgba(138,95,58,.35) calc(84% - 1px) 84%,var(--il-table) 84%);width:100%;line-height:0;margin-top:-24px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 32%);mask-image:linear-gradient(to bottom,transparent,#000 32%)}
+  /* 로고는 그림 아래 식탁색 띠에 — 카카오톡 인앱 브라우저 하단 툴바에 가리지 않도록 아래 여백을 넉넉히 */
+  .p1 .cover-foot{flex:none;position:relative;z-index:1;background:var(--il-table);padding:12px 0 calc(52px + env(safe-area-inset-bottom,0px));margin-top:-1px}
+  .p1 .cover-foot img{display:block;width:124px;height:auto;margin:0 auto}
   .hero-art svg{width:100%;height:100%;display:block}
   .p1 .cover-bottom{position:relative;z-index:1;padding:22px 24px 0}
   .info{display:grid;gap:6px;font-size:15px}
@@ -128,7 +130,7 @@
     </div>
 
     <div class="hero-art">
-<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMax slice">
+<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMax meet">
 <rect width="320" height="400" fill="var(--il-bg)"/>
 <circle cx="160" cy="150" r="96" fill="var(--il-halo)" opacity=".45"/>
 <circle cx="160" cy="150" r="62" fill="var(--il-halo)" opacity=".55"/>
@@ -278,7 +280,7 @@
 </svg>
     </div>
 
-    <img class="cover-logo" src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295">
+    <div class="cover-foot"><img src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295"></div>
   </section>
 
   <!-- ========== 2페이지 : 초대의 글 · 주소 · 약도 ========== -->
