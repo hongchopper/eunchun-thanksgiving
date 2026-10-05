@@ -52,14 +52,13 @@
 
   /* ----- 1페이지 ----- */
   /* 첫 화면 한 장: 글자는 위에 모으고, 그림은 아래에 깔아 여백을 둠 */
-  .p1{height:100svh;min-height:600px;max-height:940px;padding:0;gap:0;background:var(--il-bg);overflow:hidden}
+  .p1{height:100svh;min-height:600px;max-height:940px;padding:0 0 calc(44px + env(safe-area-inset-bottom,0px));gap:0;overflow:hidden}
   .p1 .cover-top{padding:clamp(40px,7svh,76px) 24px 0}
-  .p1 .title{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.4;text-wrap:balance}
-  .hero-art{flex:1 1 auto;min-height:0;width:100%;line-height:0;margin-top:8px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 22%);mask-image:linear-gradient(to bottom,transparent,#000 22%)}
-  /* 로고는 그림 아래 식탁색 띠에 — 카카오톡 인앱 브라우저 하단 툴바에 가리지 않도록 아래 여백을 넉넉히 */
-  .p1 .cover-foot{flex:none;position:relative;z-index:1;background:var(--il-table);padding:2px 0 calc(40px + env(safe-area-inset-bottom,0px));margin-top:-1px}
-  .p1 .cover-foot img{display:block;width:100px;height:auto;margin:0 auto}
-  .hero-art svg{width:100%;height:100%;display:block}
+  .p1 .title{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.4;text-wrap:balance;word-break:keep-all}
+  .hero-art{flex:1 1 auto;min-height:0;position:relative;container-type:size;display:flex;justify-content:center;align-items:center;margin-top:22px;line-height:0}
+    /* 그림 전체가 잘리지 않도록 남은 공간 안에 4:5 아치 카드로 맞춤 */
+  .hero-art svg{display:block;width:min(100cqw - 48px,80cqh);height:auto;aspect-ratio:4/5;border-radius:50% 50% 12px 12px/40% 40% 12px 12px}
+  .hero-art .cover-logo{position:absolute;left:0;right:0;bottom:calc((100cqh - min(100cqw - 48px,80cqh) * 1.25) / 2 + min(2.4cqh,14px));margin:0 auto;width:min(96px,26cqw);height:auto}
   .p1 .cover-bottom{position:relative;z-index:1;padding:14px 24px 0}
   .info{display:grid;gap:4px;font-size:15px}
   .info .when{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--accent)}
@@ -129,7 +128,7 @@
     </div>
 
     <div class="hero-art">
-<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMax slice">
+<svg viewBox="0 0 320 400" role="img" aria-label="밀 이삭과 해를 배경으로 감·사과·포도가 담긴 바구니, 호박과 빵이 놓인 추수감사 식탁 그림" preserveAspectRatio="xMidYMid slice">
 <rect width="320" height="400" fill="var(--il-bg)"/>
 <circle cx="160" cy="150" r="96" fill="var(--il-halo)" opacity=".45"/>
 <circle cx="160" cy="150" r="62" fill="var(--il-halo)" opacity=".55"/>
@@ -277,9 +276,9 @@
 <path d="M40 244 L41.6 248.4 L46 250 L41.6 251.6 L40 256 L38.4 251.6 L34 250 L38.4 248.4 Z" fill="var(--il-2)" opacity=".8"/>
 <path d="M286 256 L287.6 260.4 L292 262 L287.6 263.6 L286 268 L284.4 263.6 L280 262 L284.4 260.4 Z" fill="var(--il-2)" opacity=".8"/>
 </svg>
+      <img class="cover-logo" src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295">
     </div>
 
-    <div class="cover-foot"><img src="logo.png" alt="은천교회 · 대한예수교장로회" width="840" height="295"></div>
   </section>
 
   <!-- ========== 2페이지 : 초대의 글 · 주소 · 약도 ========== -->
